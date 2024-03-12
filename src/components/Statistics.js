@@ -1,13 +1,16 @@
 // Statistics.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Statistics.css';
 
-const Statistics = () => {
-  return (
+
+function Statistics() {
+  console.log('Test')
+  return(
     <div>
-      <h1>Statistics</h1>
-      {/* Add content for displaying statistics */}
+      <h1>Rish</h1>
     </div>
   );
-};
+}
 
 export default Statistics;
