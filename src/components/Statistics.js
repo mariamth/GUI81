@@ -5,12 +5,15 @@ import './Statistics.css';
 
 
 function Statistics() {
-  console.log('Test')
-  return(
-    <div>
-      <h1>Rish</h1>
+  return (
+    <div className="Stats-Screen">
+      <div className="Outer-Rectangle">
+        <div className="Details-Rectangle">
+        </div>
+      </div>
     </div>
   );
 }
 
 export default Statistics;
+

@@ -1,13 +1,35 @@
-
-.stats-screen {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
+/*
+.Stats-Screen {
+    width: 393px;
+    height: 852px;
+    background: lightgray 50% / cover no-repeat;
     }
 
-.outer-rectangle{
+.Outer-Rectangle {
+    position: absolute;
+    top: 67px;
+    left: 12px;
+    width: 370px;
+    height: 668px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: #D9D9D9;
+    mix-blend-mode: color-burn;
+}
+*/
+
+.Stats-Screen {
+    position: relative;
+    width: 393px;
+    height: 852px;
+    background: lightgray 50% / cover no-repeat;
+}
+
+
+.Outer-Rectangle {
+    position: absolute;
+    top: 67px;
+    left: 12px;
     width: 370px;
     height: 668px;
     flex-shrink: 0;
@@ -16,28 +38,48 @@
     mix-blend-mode: color-burn;
 }
 
-.details-rectangle{
+.Details-Rectangle{
+    position: absolute;
+    top: 60px;
+    left: 15px;
     width: 339px;
     height: 236px;
     flex-shrink: 0;
     border-radius: 20px;
     background: #D9D9D9;
-    mix-blend-mode: plus-darker;
+    mix-blend-mode: multiply;
 }
 
-.graph-rectangle{
+.Chart-Rectangle{
+    position: absolute;
+    top: 388px;
+    left: 27;
     width: 339px;
     height: 297px;
     flex-shrink: 0;
     border-radius: 17px;
     background: #D9D9D9;
-    mix-blend-mode: plus-darker;
+    mix-blend-mode: multiply;
+}
+
+.Search-Bar{
+    position: absolute;
+    top: 73;
+    left: 54;
+    width: 281px;
+    height: 33px;
+    flex-shrink: 0;
+    fill: #D9D9D9;
+    mix-blend-mode: multiply;
 }
 
 .label_Details {
+    position: absolute;
+    top: 138;
+    left: 49px;
     height: 29px;
     width: 86px;
-  }
+}
 
 .label_Details::before {
     content: "Details";
