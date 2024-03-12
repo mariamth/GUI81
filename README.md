@@ -1,7 +1,7 @@
 # notices
 ## changes
 navbar works, use
-    <NavBar /> 
+'''<NavBar />'''
 on ur pages to render it
 TODO: navbar icons
 
