@@ -1,9 +1,7 @@
 # notices
 ## changes
 navbar works, use
-'''html
-<NavBar />
-'''
+'<NavBar/>'
 on ur pages to render it
 TODO: navbar icons
 
