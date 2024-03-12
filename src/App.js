@@ -1,22 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-//import Header from './components/Header';
-//import CurrentWeather from './components/CurrentWeather';
-import DailyWeather from './components/DailyWeather';
-import MonthlyWeather from './components/MonthlyWeather';
-import Statistics from './components/Statistics';
+
+import CurrentWeather from './components/CurrentWeather';
+import Alerts from './components/Alerts.js';
+import Statistics from './components/Statistics.js';
+import Suggestions from './components/Suggestions.js';
+
+import NavBar from './components/NavBar';
 
 function App(){
   return (
     <><div>
       <h1>Rish</h1>
-    </div><Router>
+    </div>
+    <Router>
+      <div>
+        <NavBar />
         <Routes>
-          <Route path="/" component={<Statistics />} />
-          <Route path="/daily" component={<DailyWeather />} />
-          <Route path="/monthly" component={<MonthlyWeather />} />
+          <Route path="/home" element={<CurrentWeather />} />
+          <Route path="/alerts" element={<Alerts />} />
+          <Route path="/statistics" element={<Statistics />} />
+          <Route path="/suggestions" element={<Suggestions />} />
         </Routes>
-      </Router></>
+      </div>
+    </Router></>
   );
 }
 

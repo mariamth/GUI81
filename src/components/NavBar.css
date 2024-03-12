@@ -1,0 +1,26 @@
+#background {
+    background-color: #1B242D; /* Dark background color */
+    color: #fff; /* Light text color */
+    padding: 20px;
+    position: fixed; /* Fix the bar at the bottom */
+    left: 0;
+    bottom: 0;
+    width: 100%; /* Full width */
+  }
+
+  #list{
+    display:  flex;
+    justify-content: space-around;
+  }
+
+  #listitem{
+    margin: 0 10px; /*  space between  items */
+    padding: 10px; /* */
+    list-style-type: none;
+  }
+  #selecteditem{
+    margin: 0 10px; /*  space between  items */
+    padding: 10px; /* */
+    list-style-type: none;
+    color: #2C9E75;
+  }
