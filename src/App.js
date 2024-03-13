@@ -10,9 +10,6 @@ import NavBar from './components/NavBar';
 
 function App(){
   return (
-    <><div>
-      <h1>Rish</h1>
-    </div>
     <Router>
       <div>
         <NavBar />
@@ -23,8 +20,8 @@ function App(){
           <Route path="/suggestions" element={<Suggestions />} />
         </Routes>
       </div>
-    </Router></>
-  );
+    </Router>
+  )
 }
 
 export default App;
