@@ -1,7 +1,5 @@
 # notices
 ## changes
-navbar works, use "< NavBar/>" on ur pages to render it\
-TODO: navbar icons
 
 # Getting Started with Create React App
 
