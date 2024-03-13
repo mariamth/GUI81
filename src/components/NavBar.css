@@ -1,26 +1,33 @@
 #background {
-    background-color: #1B242D; /* Dark background color */
-    color: #fff; /* Light text color */
-    padding: 20px;
+    background-color: #1B242D;
+    color: #fff;
+    padding: 0px;
     position: fixed; /* Fix the bar at the bottom */
     left: 0;
     bottom: 0;
-    width: 100%; /* Full width */
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    width: 100%;
   }
 
   #list{
     display:  flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
   }
 
-  #listitem{
-    margin: 0 10px; /*  space between  items */
-    padding: 10px; /* */
+  #default-li{
+    margin: 10px 0 0 0;
+    padding: 10px;
     list-style-type: none;
+    transform: scale(1);
   }
-  #selecteditem{
-    margin: 0 10px; /*  space between  items */
-    padding: 10px; /* */
+ #selected-li{
+    /*
+    id changes dynamically based on URL pathname
+    Selected items become bigger and change colour to white
+    */
+    padding: 10px;
     list-style-type: none;
-    color: #2C9E75;
+    filter: brightness(500%);
+    transform: scale(1.8);
   }

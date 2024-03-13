@@ -2,13 +2,17 @@ import React from 'react';
 
 import NavBar from './components/NavBar';
 import Background from './Background';
+import { BrowserRouter as Router} from 'react-router-dom';
+
 
 function App(){
+  
   return (
-      <div>
-        <NavBar />
-        <Background/>
-      </div>
+    // Must wrap NavBar inside Router component
+    <Router> 
+      <NavBar/>
+      <Background/>
+    </Router>
   )
 }
 
