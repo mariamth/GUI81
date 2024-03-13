@@ -1,22 +1,24 @@
 import React from 'react';
-import ClearSky from './components/assets/ClearSkiesBackground.gif'
 
-const Background = ({ children, className }) => {
-  const backgroundStyle = {
-    backgroundImage: ClearSky,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    position: 'fixed',  // Ensure the background covers the entire viewport
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    zIndex: -1,  // Render the background behind other content
-  };
+import Clear from './components/assets/ClearSkiesBackground.gif'
+import Cloud from './components/assets/CloudySkyBackground.gif'
+import Rain from './components/assets/Rainybackground.gif'
+import Snow from './components/assets/SnowyBackgound.gif'
+
+import './Background.css'
+
+const Background = () => {
+
+  const images = [Clear, Cloud, Rain, Snow]
+  const index = Math.floor(Math.random() * images.length)
+  const image = images[index]
+
+    const backgroundStyle = {
+      backgroundImage: `url(${image})`
+    }
 
   return (
-    <div className={`background ${className}`} style={backgroundStyle}>
-      {children}
+    <div id='background-image' style={backgroundStyle}>
     </div>
   );
 };
