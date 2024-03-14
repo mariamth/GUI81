@@ -17,9 +17,10 @@
   }
 
   #default-li{
-    margin: 10px 0 0 0;
+    margin: 5px 0 0 0;
     padding: 10px;
     list-style-type: none;
+    transition: transform 0.5s ease;
     transform: scale(1);
   }
  #selected-li{
@@ -27,8 +28,10 @@
     id changes dynamically based on URL pathname
     Selected items become bigger and change colour to white
     */
+    margin: 5px 0 0 0;
     padding: 10px;
     list-style-type: none;
     filter: brightness(500%);
+    transition: transform 0.3s ease;
     transform: scale(1.8);
   }
