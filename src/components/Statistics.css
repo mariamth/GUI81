@@ -21,41 +21,53 @@
     display: flex;
     flex-direction: column;
 }
-
-.Search-Bar-Area{
-    border-radius: 40px;
+.Search-Bar-Area {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
     padding-top: 1%;
     padding-left: 3%;
     padding-right: 3%;
+    position: relative;
     display: flex;
     justify-content: center;
     background-color: #D9D9D9;
 }
 
-.Search-Input{
-    width: 100%;
+.Search-Input {
+    width: calc(100% - 30px); /* Adjust width to accommodate the button */
     height: 35px;
     background: #D9D9D9;
     border-radius: 40px;
-    /* border-top-color: black;
-    border-bottom-color: black; */
-    font-size: 100%;
-    padding-left: 22%;
     font-size: medium;
+    padding-left: 50px; /* Adjust left padding to accommodate the button */
     border: none;
+    position: relative;
 }
 
-.search-icon{
-    display: flex;
-    justify-content: center;
-    top: 2%;
+.Search-Button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    left: 3.9%; /* Adjust left position */
+    top: 60%; /* Align to the vertical center */
+    transform: translateY(-50%);
+    height: 100%;
 }
+
+.Search-Button img {
+    width: 24px;
+    height: 24px;
+    margin: auto; /* Center the image vertically */
+}
+
 
 .Details-Rectangle{
     position: absolute;
     flex: 1;
-    top: 8%;
-    height: 40%;
+    top: 7%;
+    height: 45%;
     left: 2%;
     right: 2%;
     border-radius: 20px;
@@ -65,16 +77,15 @@
 
 .Chart-Rectangle{
     position: absolute;
-    top: 50%;
+    top: 55%;
     left: 2%;
     right: 2%;
-    height: 45%;
+    height: 42%;
     flex-shrink: 0;
     border-radius: 17px;
     background: #d9d9d9;
     mix-blend-mode: multiply;
 }
-
 
 
 .map{
@@ -84,3 +95,13 @@
     border-radius: 10px;
     background: url(./assets/Map_image.png), lightgray 50% / cover no-repeat;
 }
+/* 
+.Details-Style{
+    left: 100px;
+    z-index: 2;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 400;
+    word-wrap: break-word
+} */

@@ -1,26 +1,25 @@
+export async function getWeather(cityName) {
+  const apiKey = '041c6095b46899deeb41d26b502d85a7'; // Replace 'YOUR_API_KEY' with your actual API key from OpenWeatherMap
+  const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
 
-// Function to get the weather from OpenWeatherMap
-async function getWeather(cityName) {
-    // USing the API keys and the url to get imformation for a specific city
-    const apiKey = "041c6095b46899deeb41d26b502d85a7";
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`;
-
-    try {
-        // Make the API request using await for better readability
-        const response = await fetch(apiUrl);
-        
-        // Check if the request was successful
-        if (!response.ok) {
-        throw new Error(`Error: ${response.status}`);
-        }
-
-
-      const data = await response.json();
-      return data;
-    } 
-    catch (error) {
-      // Handle errors
-      console.error(`Error fetching weather: ${error.message}`);
-      throw error; // Propagate the error for handling in the calling code
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    
+    if (response.ok) {
+      const weatherData = {
+        city: data.name,
+        weather: data.weather[0].description,
+        temperature: data.main.temp,
+        humidity: data.main.humidity,
+        windSpeed: data.wind.speed
+      };
+      return weatherData;
+    } else {
+      throw new Error(data.message || 'Failed to fetch weather data');
     }
+  } catch (error) {
+    console.error('Error fetching weather data:', error);
+    return null;
   }
+}
