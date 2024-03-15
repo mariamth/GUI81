@@ -1,6 +1,6 @@
 // MonthlyWeather.js
 import React from 'react';
-import Header from './Header';
+import Header from './Weather-Header';
 
 const CurrentWeather = () => {
   return (

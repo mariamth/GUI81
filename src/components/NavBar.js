@@ -3,13 +3,13 @@ import React from 'react';
 import {  BrowserRouter as Router, Route, Routes, Navigate, Link, useLocation} from 'react-router-dom';
 
 // Links to other pages
-import CurrentWeather from './CurrentWeather';
+import CurrentWeather from './Weather-Current.js';
 import Alerts from './Alerts.js';
 import Statistics from './Statistics.js';
 import Suggestions from './Suggestions.js';
 
-import DailyWeather from './DailyWeather';
-import MonthlyWeather from './MonthlyWeather';
+import DailyWeather from './Weather-Daily.js';
+import MonthlyWeather from './Weather-Monthly.js';
 
 import Notes  from './Notes.js';
 
@@ -28,25 +28,25 @@ const NavBar = () => {
 
   return (
     <>
-      <nav id='background'>
-        <ul id='list'>
+      <nav id='nav-background'>
+        <ul id='nav-list'>
 
           {/* Compares URL pathname and changes tag id based on output
           Used to dynamically update the icons without a full page reload*/}
 
-          <li id={location.pathname.includes('/home') ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname.includes('/home') ? 'nav-selected' : 'nav-default'}>
             <Link to='/home'><img src={home} alt="Home"></img></Link>
           </li>
 
-          <li id={location.pathname === '/alerts' ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname === '/alerts' ? 'nav-selected' : 'nav-default'}>
             <Link to='/alerts'><img src={map} alt="Alerts"></img></Link>
           </li>
 
-          <li id={location.pathname === '/statistics' ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname === '/statistics' ? 'nav-selected' : 'nav-default'}>
             <Link to='/statistics'><img src={chart} alt="Stats"></img></Link>
           </li>
 
-          <li id={location.pathname.includes('/suggestions') ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname.includes('/suggestions') ? 'nav-selected' : 'nav-default'}>
             <Link to='/suggestions'><img src={check} alt="Suggest"></img></Link>
           </li>
 

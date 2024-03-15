@@ -1,4 +1,4 @@
-#header-background{
+#weather-header-background{
     background-color: #1B242D;
     color: #fff;
     padding: 0px;
@@ -9,22 +9,22 @@
     border-bottom-right-radius: 60px;
     width: 100%;
     z-index: 2;
-      }
+  }
       
 
-  #list{
+  #weather-list{
     display:  flex;
     justify-content: space-evenly;
   }
 
-  #default-li{
+  #weather-default{
     margin: 5px 0 0 0;
     padding: 10px;
     list-style-type: none;
     transition: transform 0.5s ease;
     transform: scale(1);
   }
- #selected-li{
+ #weather-selected{
     /*
     id changes dynamically based on URL pathname
     Selected items become bigger and change colour to white

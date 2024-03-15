@@ -3,7 +3,7 @@ import {  BrowserRouter as Router, Link, useLocation} from 'react-router-dom';
 
 import home from './assets/navbar/icon_home.png'
 
-import './Header.css';
+//import './Header.css';
 
 const Header = () => {
 

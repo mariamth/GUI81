@@ -3,7 +3,7 @@ import {  BrowserRouter as Router, Link, useLocation} from 'react-router-dom';
 
 import home from './assets/navbar/icon_home.png'
 
-import './Header.css';
+import './Weather-Header.css';
 
 const Header = () => {
 
@@ -12,22 +12,22 @@ const Header = () => {
 
   return (
     <>
-      <nav id='header-background'>
-        <ul id='list'>
+      <nav id='weather-header-background'>
+        <ul id='weather-list'>
 
           {/* Compares URL pathname and changes tag id based on output
           Used to dynamically update the icons without a full page reload*/}
 
-          <li id={location.pathname =='/home' ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname =='/home' ? 'weather-selected' : 'weather-default'}>
             <Link to='/home'><img src={home} alt="Home"></img></Link>
           </li>
 
-          <li id={location.pathname === '/home/daily' ? 'selected-li' : 'default-li'}>
-            <Link to='/home/daily'><img src={home} alt="Alerts"></img></Link>
+          <li id={location.pathname === '/home/daily' ? 'weather-selected' : 'weather-default'}>
+            <Link to='/home/daily'><img src={home} alt="Daily"></img></Link>
           </li>
 
-          <li id={location.pathname === '/home/monthly' ? 'selected-li' : 'default-li'}>
-            <Link to='/home/monthly'><img src={home} alt="Stats"></img></Link>
+          <li id={location.pathname === '/home/monthly' ? 'weather-selected' : 'weather-default'}>
+            <Link to='/home/monthly'><img src={home} alt="Monthly"></img></Link>
           </li>
 
         </ul>
