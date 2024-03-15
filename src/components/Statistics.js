@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
+import L from 'leaflet';
+import 'leaflet/dist/leaflet.css'; // Make sure to import Leaflet CSS
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';
 import { getWeather } from './useful_functions/getWeather'; // Import the getWeather function
@@ -25,6 +28,7 @@ function Statistics() {
     }
   };
 
+
   return (
     <div className='Stats-Screen'>
       <div className='Outer-Rectangle'>
@@ -41,16 +45,17 @@ function Statistics() {
           </button>
         </div>
         <div className='Details-Rectangle'>
-          {error && <p className="error-message">{error}</p>}
-          <div> </div>
           {weatherData && (
-            <>
-              <p>City: {weatherData.city}</p>
-              <p>Weather: {weatherData.weather}</p>
-              <p>Temperature: {weatherData.temperature}°C</p>
-              <p>Humidity: {weatherData.humidity}%</p>
-              <p>Wind Speed: {weatherData.windSpeed} m/s</p>
-            </>
+            <div className="weather-details-header">
+              <h2>Weather Details</h2>
+              <div className='weather-details-p'>
+                <p>City: {weatherData.city}</p>
+                <p>Weather: {weatherData.weather}</p>
+                <p>Temperature: {weatherData.temperature}°C</p>
+                <p>Humidity: {weatherData.humidity}%</p>
+                <p>Wind Speed: {weatherData.windSpeed} m/s</p>
+              </div>
+            </div>
           )}
         </div>
         <div className='Chart-Rectangle'>

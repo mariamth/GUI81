@@ -4,7 +4,6 @@
     width: 100%;
     height: 100vh;
     z-index: 1;
-    /* position: relative; */
 }
 
 .Outer-Rectangle {
@@ -51,7 +50,7 @@
     padding: 0;
     position: absolute;
     left: 3.9%; /* Adjust left position */
-    top: 60%; /* Align to the vertical center */
+    top: 70%; /* Align to the vertical center */
     transform: translateY(-50%);
     height: 100%;
 }
@@ -62,11 +61,10 @@
     margin: auto; /* Center the image vertically */
 }
 
-
 .Details-Rectangle{
     position: absolute;
     flex: 1;
-    top: 7%;
+    top: 8.5%;
     height: 45%;
     left: 2%;
     right: 2%;
@@ -80,28 +78,34 @@
     top: 55%;
     left: 2%;
     right: 2%;
-    height: 42%;
+    height: 43%;
     flex-shrink: 0;
     border-radius: 17px;
     background: #d9d9d9;
     mix-blend-mode: multiply;
 }
 
-
-.map{
-    width: 124px;
-    height: 50px;
-    flex-shrink: 0;
-    border-radius: 10px;
-    background: url(./assets/Map_image.png), lightgray 50% / cover no-repeat;
-}
-/* 
-.Details-Style{
-    left: 100px;
+.weather-details-header {
+    position: absolute;
+    top: 10%; 
+    left: 88%; 
+    margin-right: 20px; 
+    width: 30%;
+    transform: translate(-50%, -50%); 
     z-index: 2;
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-    font-family:'Times New Roman', Times, serif;
-    font-weight: 400;
-    word-wrap: break-word
-} */
+    color: black;
+    font-size: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.weather-details-p{
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
