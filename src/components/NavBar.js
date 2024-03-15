@@ -11,6 +11,8 @@ import Suggestions from './Suggestions.js';
 import DailyWeather from './DailyWeather';
 import MonthlyWeather from './MonthlyWeather';
 
+import Notes  from './Notes.js';
+
 // Links to NavBar icons
 import home from './assets/navbar/icon_home.png'
 import map from './assets/navbar/icon_map.png'
@@ -44,7 +46,7 @@ const NavBar = () => {
             <Link to='/statistics'><img src={chart} alt="Stats"></img></Link>
           </li>
 
-          <li id={location.pathname === '/suggestions' ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname.includes('/suggestions') ? 'selected-li' : 'default-li'}>
             <Link to='/suggestions'><img src={check} alt="Suggest"></img></Link>
           </li>
 
@@ -59,6 +61,8 @@ const NavBar = () => {
 
         <Route path="/home/daily" element={<DailyWeather />} />
         <Route path="/home/monthly" element={<MonthlyWeather />} />
+
+        <Route path="/suggestions/planner" element={<Notes />} />
       </Routes>
     </>
   );
