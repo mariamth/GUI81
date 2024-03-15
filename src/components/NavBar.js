@@ -8,6 +8,9 @@ import Alerts from './Alerts.js';
 import Statistics from './Statistics.js';
 import Suggestions from './Suggestions.js';
 
+import DailyWeather from './DailyWeather';
+import MonthlyWeather from './MonthlyWeather';
+
 // Links to NavBar icons
 import home from './assets/navbar/icon_home.png'
 import map from './assets/navbar/icon_map.png'
@@ -29,7 +32,7 @@ const NavBar = () => {
           {/* Compares URL pathname and changes tag id based on output
           Used to dynamically update the icons without a full page reload*/}
 
-          <li id={location.pathname === '/home' ? 'selected-li' : 'default-li'}>
+          <li id={location.pathname.includes('/home') ? 'selected-li' : 'default-li'}>
             <Link to='/home'><img src={home} alt="Home"></img></Link>
           </li>
 
@@ -53,6 +56,9 @@ const NavBar = () => {
         <Route path="/alerts" element={<Alerts />} />
         <Route path="/statistics" element={<Statistics />} />
         <Route path="/suggestions" element={<Suggestions />} />
+
+        <Route path="/home/daily" element={<DailyWeather />} />
+        <Route path="/home/monthly" element={<MonthlyWeather />} />
       </Routes>
     </>
   );

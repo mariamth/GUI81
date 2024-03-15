@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import L from 'leaflet';
+import L from 'leaflet'; // npm install leaflet
 import 'leaflet/dist/leaflet.css'; // Make sure to import Leaflet CSS
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';

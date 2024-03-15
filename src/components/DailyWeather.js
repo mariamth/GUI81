@@ -1,11 +1,12 @@
 // DailyWeather.js
 import React from 'react';
+import Header from './Header';
 
 const DailyWeather = () => {
   return (
     <div>
-      <h1>Daily Weather</h1>
-      {/* Add content for displaying daily weather information */}
+      <h1>DAILY</h1><br></br><h1>DAILY</h1><br></br>
+      <Header/>
     </div>
   );
 };
