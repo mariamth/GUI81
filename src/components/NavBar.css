@@ -1,36 +1,36 @@
-#nav-background {
+.nav-background {
     background-color: #1B242D;
-    color: #fff;
     padding: 0px;
-    position: fixed; /* Fix the bar at the bottom */
-    left: 0;
+    position: fixed;
     bottom: 0;
+    left: 0;
     border-top-left-radius: 60px;
     border-top-right-radius: 60px;
     width: 100%;
-    z-index: 2;
   }
 
-  #nav-list{
+  .nav-list{
     display:  flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 40px;
   }
 
-  #nav-default{
+  .nav-default{
+    list-style-type: none;
     margin: 5px 0 0 0;
     padding: 10px;
-    list-style-type: none;
     transition: transform 0.5s ease;
     transform: scale(1);
   }
- #nav-selected{
+ .nav-selected{
     /*
     id changes dynamically based on URL pathname
     Selected items become bigger and change colour to white
     */
+    list-style-type: none;
     margin: 5px 0 0 0;
     padding: 10px;
-    list-style-type: none;
     filter: brightness(500%);
     transition: transform 0.3s ease;
     transform: scale(1.8);

@@ -1,38 +1,48 @@
-#weather-header-background{
-    background-color: #1B242D;
-    color: #fff;
-    padding: 0px;
-    position: fixed; /* Fix the bar at the bottom */
-    left: 0;
-    top: 0;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-    width: 100%;
-    z-index: 2;
+.weather-header-background{
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0px;
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
   }
       
-
-  #weather-list{
-    display:  flex;
-    justify-content: space-evenly;
+.weather-list{
+  display:  flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0px;
+  margin: 0;
   }
 
-  #weather-default{
-    margin: 5px 0 0 0;
-    padding: 10px;
-    list-style-type: none;
-    transition: transform 0.5s ease;
-    transform: scale(1);
+.weather-default{
+  list-style-type: none;
+  text-align: center;
+  padding: 20px 60px;
+  flex: 1;
   }
- #weather-selected{
+
+.weather-selected{
     /*
     id changes dynamically based on URL pathname
     Selected items become bigger and change colour to white
     */
-    margin: 5px 0 0 0;
-    padding: 10px;
     list-style-type: none;
-    filter: brightness(500%);
-    transition: transform 0.3s ease;
-    transform: scale(1.8);
+    text-align: center;
+    padding: 20px 60px;
+    border-radius: 10px;
+    background-color: #2C9E75;
+    transition: background-color 0.7s ease;
+    flex: 1;
+  }
+
+  a {
+    color: white;
+    font-size: larger;
+    font-weight: 450;
+    text-decoration: none;
   }
