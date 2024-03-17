@@ -1,10 +1,15 @@
 // DailyWeather.js
 import React from 'react';
+import './Weather.css';
 
 const DailyWeather = () => {
   return (
-    <div>
-      <h1>DAILY</h1><br></br><h1>DAILY</h1><br></br>
+    <div className="DailyWcontainer">
+      <h1>Daily Weather</h1>
+      <div className="DWlarge-container">
+        {/* Add content for displaying current weather information */}
+      </div>
+    
     </div>
   );
 };

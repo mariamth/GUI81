@@ -1,10 +1,16 @@
 // MonthlyWeather.js
 import React from 'react';
+import './Weather.css';
+
 
 const MonthlyWeather = () => {
   return (
-    <div>
-      <h1>MONTH</h1><br></br><h1>MONTH</h1><br></br>
+    <div className="MonthlyWcontainer">
+      <h1>Monthly Weather</h1>
+      {/* Add content for displaying current weather information */}
+      <div className="MWlarge-container">
+        {/* Add content for displaying current weather information */}
+      </div>
     </div>
   );
 };

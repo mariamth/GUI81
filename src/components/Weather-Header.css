@@ -1,4 +1,4 @@
-.weather-header-background{
+.weather-header-background {
   background-color: rgba(0, 0, 0, 0.4);
   padding: 0px;
   position: fixed;
@@ -9,40 +9,47 @@
   margin-left: auto;
   margin-right: auto;
   width: 70%;
-  }
-      
-.weather-list{
-  display:  flex;
+}
+
+.weather-list {
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding-left: 0px;
   margin: 0;
-  }
+}
 
-.weather-default{
+.weather-default {
   list-style-type: none;
   text-align: center;
-  padding: 20px 60px;
+  padding: 20px 20px; /* Adjust padding for smaller screens */
   flex: 1;
-  }
+}
 
-.weather-selected{
-    /*
-    id changes dynamically based on URL pathname
-    Selected items become bigger and change colour to white
-    */
-    list-style-type: none;
-    text-align: center;
-    padding: 20px 60px;
-    border-radius: 10px;
-    background-color: #2C9E75;
-    transition: background-color 0.7s ease;
-    flex: 1;
-  }
+.weather-selected {
+  list-style-type: none;
+  text-align: center;
+  padding: 20px 20px; /* Adjust padding for smaller screens */
+  border-radius: 10px;
+  background-color: #2c9e75;
+  transition: background-color 0.7s ease;
+  flex: 1;
+}
 
-  a {
-    color: white;
-    font-size: larger;
-    font-weight: 450;
-    text-decoration: none;
+a {
+  color: white;
+  font-size: larger;
+  font-weight: 450;
+  text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .weather-header-background {
+    width: 90%; 
   }
+  .weather-default,
+  .weather-selected {
+    padding: 20px 10px; 
+  }
+}

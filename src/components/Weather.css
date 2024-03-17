@@ -1,0 +1,90 @@
+.CurrentWcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px; /* Adjust the value to push it down the page */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 160px; /* Add margin-bottom to create gap */
+}
+  
+.CWlarge-container {
+    width: 370px;
+    height: 259px;
+    border-radius: 40px;
+    background: #d9d9d9;
+    opacity: 45%;
+    mix-blend-mode: plus-darker;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+  
+.small-container {
+    width: 108px;
+    height: 296px;
+    border-radius: 40px;
+    background: #d9d9d9;
+    opacity: 45%;
+    mix-blend-mode: plus-darker;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+
+}
+.small-container-wrapper {
+    display: flex;
+    padding-left: 20px;
+}
+  
+.small-container {
+    flex: 1; /* Grow to fill available space equally */
+    margin-right: 20px;
+}
+  
+
+.DailyWcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px; /* Adjust the value to push it down the page */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 160px; /* Add margin-bottom to create gap */
+}
+
+.DWlarge-container {
+    width: 370px;
+    height: 500px;
+    border-radius: 40px;
+    background: #d9d9d9;
+    opacity: 45%;
+    mix-blend-mode: plus-darker;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+
+/*Monthly container*/
+.MonthlyWcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 110px; /* Adjust the value to push it down the page */
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 160px; /* Add margin-bottom to create gap */
+}
+.MWlarge-container{
+    width: 370px;
+    height: 500px;
+    border-radius: 40px;
+    background: #d9d9d9;
+    opacity: 45%;
+    mix-blend-mode: plus-darker;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
