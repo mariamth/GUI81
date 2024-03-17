@@ -5,6 +5,8 @@ import 'leaflet/dist/leaflet.css'; // Make sure to import Leaflet CSS
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';
 import { getWeather } from './useful_functions/getWeather'; // Import the getWeather function
+import axios from 'axios';
+
 
 function Statistics() {
   const [searchInput, setSearchInput] = useState('');
@@ -28,6 +30,24 @@ function Statistics() {
     }
   };
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`"https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3"`);
+        setWeatherData(response.data);
+        setError('');
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+        setWeatherData(null);
+        setError('Failed to fetch weather data. Please try again.');
+      }
+    };
+  
+    if (searchInput) {
+      fetchData();
+    }
+  }, [searchInput]);
+  
 
   return (
     <div className='Stats-Screen'>
@@ -45,6 +65,11 @@ function Statistics() {
           </button>
         </div>
         <div className='Details-Rectangle'>
+          <div className='Weather-Map'>
+            {weatherData && (
+              <iframe src="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3" height="70%" width="60%" />
+            )}
+          </div>
           {weatherData && (
             <div className="weather-details-header">
               <h2>Weather Details</h2>

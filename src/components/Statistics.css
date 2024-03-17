@@ -109,3 +109,21 @@
     font-weight: bold;
 }
 
+.Weather-Map {
+    z-index: 4;
+    background-color: black;
+    position: relative;
+    width: 60%;
+    height: 70%; /* Adjust height as needed */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px; /* Adjust margin as needed */
+  }
+
+.Weather-Map iframe {
+    z-index: 5;
+    width: 60%;
+    height: 70%;
+    object-fit: cover; /* Ensure the map fills the container */
+}
+  
