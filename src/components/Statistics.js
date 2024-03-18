@@ -1,46 +1,19 @@
 
 
 import React, { useState, useEffect } from 'react';
-import L from 'leaflet'; // npm install leaflet
-import 'leaflet/dist/leaflet.css'; // Make sure to import Leaflet CSS
+import axios from 'axios';
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';
 import { getWeather } from './useful_functions/getWeather'; // Import the getWeather function
-import axios from 'axios';
-
 
 function Statistics() {
   const [searchInput, setSearchInput] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState('');
 
-  const handleInputChange = (event) => {
-    setSearchInput(event.target.value);
-  };
-
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`"https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3"`);
-        setWeatherData(response.data);
-        setError('');
-      } catch (error) {
-        console.error('Error fetching weather data:', error);
-        setWeatherData(null);
-        setError('Failed to fetch weather data. Please try again.');
-      }
-    };
-
-    if (searchInput) {
-      fetchData();
-    }
-  }, [searchInput]);
-
-  const handleSearch = async () => {
-    console.log("Search button clicked:", searchInput);
+  const fetchWeatherData = async (city) => {
     try {
-      const data = await getWeather(searchInput);
+      const data = await getWeather(city);
       setWeatherData(data);
       setError('');
     } catch (error) {
@@ -50,12 +23,21 @@ function Statistics() {
     }
   };
 
+  useEffect(() => {
+    fetchWeatherData('London'); // Fetch weather data for London by default
+  }, []); // Empty dependency array ensures it runs only once when component mounts
+
+  const handleSearch = async () => {
+    if (searchInput.trim() !== '') {
+      fetchWeatherData(searchInput);
+    }
+  };
+
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
     }
   };
-
 
   return (
     <div className='Stats-Screen'>
@@ -74,26 +56,30 @@ function Statistics() {
             </div>
           </div>
         )}
+        {error && <p>{error}</p>}
       </div>
 
       <div>
         <h2 className='map-header'>Weather Map</h2>
       </div>
 
+      {/* Render map */}
       <div className='Weather-Map'>
-        {weatherData && (
-          <iframe src="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3" height="10%" width="60%" />
-        )}
+        <iframe
+          src="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3"
+          height="400px"
+          width="100%"
+        />
       </div>
+
       <div className='Outer-Rectangle'>
-      
         <div className='Search-Bar-Area'>
           <input
             className='Search-Input'
             placeholder='Enter city or country'
             type='text'
             value={searchInput}
-            onChange={handleInputChange}
+            onChange={(e) => setSearchInput(e.target.value)}
             onKeyPress={handleKeyPress} // Add key press event handler
           />
           <button className="Search-Button" onClick={handleSearch}>
