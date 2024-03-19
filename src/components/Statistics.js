@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';
-import { getWeather } from './useful_functions/getWeather'; // Import the getWeather function
+import { getWeather } from './useful_functions/getWeather'; 
+import Background from './Background'; 
 
 function Statistics() {
   const [searchInput, setSearchInput] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState('');
-  const [mapLayer, setMapLayer] = useState('clouds'); // Default map layer is clouds
 
   const fetchWeatherData = async (city) => {
     try {
@@ -39,10 +39,6 @@ function Statistics() {
     }
   };
 
-  const handleLayerChange = (layer) => {
-    setMapLayer(layer);
-  };
-
   return (
     <div className='Stats-Screen'>
       {/* Container for the weather details display */}
@@ -64,24 +60,19 @@ function Statistics() {
       </div>
 
       <div>
-        <h2 className='map-header'>Weather Map</h2>
-        {/* Buttons for switching map layers */}
-        <div className='map-layer-buttons'>
-          <button onClick={() => handleLayerChange('clouds')}>Clouds</button>
-          <button onClick={() => handleLayerChange('temp')}>Temperature</button>
-          <button onClick={() => handleLayerChange('wind')}>Wind Speed</button>
-          <button onClick={() => handleLayerChange('humidity')}>Humidity</button>
-        </div>
+        <h2 className='map-header'> Weather Map </h2>
       </div>
 
       {/* Render map */}
       <div className='Weather-Map'>
         <iframe
-          src={`https://openweathermap.org/weathermap?basemap=map&cities=false&layer=${mapLayer}&lat=51.5072&lon=0.1276&zoom=3`}
+          src="https://openweathermap.org/weathermap?basemap=map&cities=false&layer=radar&lat=51.5072&lon=0.1276&zoom=3"
           height="400px"
           width="100%"
         />
       </div>
+
+      <Background weatherData={weatherData} /> 
 
       <div className='Outer-Rectangle'>
         <div className='Search-Bar-Area'>
@@ -91,7 +82,7 @@ function Statistics() {
             type='text'
             value={searchInput}
             onChange={(e) => setSearchInput(e.target.value)}
-            onKeyPress={handleKeyPress} // Add key press event handler
+            onKeyPress={handleKeyPress} 
           />
           <button className="Search-Button" onClick={handleSearch}>
             <img src={SearchIcon} alt="Search" />

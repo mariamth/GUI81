@@ -1,3 +1,4 @@
+
 export async function getWeather(cityName) {
   const apiKey = '041c6095b46899deeb41d26b502d85a7';
   const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`;
@@ -8,6 +9,7 @@ export async function getWeather(cityName) {
     
     if (response.ok) {
       const weatherData = {
+        main: data.weather[0].main,
         city: data.name,
         weather: data.weather[0].description,
         temperature: data.main.temp,

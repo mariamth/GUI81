@@ -1,11 +1,12 @@
-import React from 'react';
+
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import axios from 'axios';
 
 import NavBar from './components/NavBar';
 import WeatherHeader from './components/Weather-Header.js';
 import Background from './components/Background';
 
-// Links to other pages
 import CurrentWeather from './components/Weather-Current.js';
 import Alerts from './components/Alerts.js';
 import Statistics from './components/Statistics.js';
@@ -16,15 +17,30 @@ import MonthlyWeather from './components/Weather-Monthly.js';
 
 import Notes  from './components/Notes.js';
 
+import { getWeather } from './components/useful_functions/getWeather.js'; 
+
 function App(){
+
+  const [weatherData, setWeatherData] = useState(null);
+
+  useEffect(() => {
+    const fetchWeatherData = async () => {
+      try {
+        const data = await getWeather('London'); 
+        setWeatherData(data);
+      } catch (error) {
+        console.error('Error fetching weather data:', error);
+      }
+    };
+
+    fetchWeatherData();
+  }, []);
 
   return (
     <Router> 
-
       <WeatherHeader/>
       <NavBar/>
-      <Background/>
-
+      {weatherData && <Background weatherData={weatherData} />} 
       <Routes>
         <Route path="/" element={<Navigate to='/home' />} />
         <Route path="/home" element={<CurrentWeather />} />
