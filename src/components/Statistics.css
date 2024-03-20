@@ -160,11 +160,44 @@
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.cloud-button{
+.chart-button-container{
     position: absolute;
-    top: 1%;
-    left: 2%;
-    width: 15%;
-    height: 5%;
-    color: red;
+    top: 48%;
+    left: 69.2%;
+    width: 26.9%;
+    height: 35.2%;
+    border-radius: 17px;
+}
+
+.temp-button{
+    z-index: 10;
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    width: 20%;
+    height: 8%;
+    border-radius: 40px;
+    mix-blend-mode:color-burn;
+}
+
+.humidity-button{
+    z-index: 10;
+    position: absolute;
+    top: 3%;
+    left: 40%;
+    width: 20%;
+    height: 8%;
+    border-radius: 40px;
+    mix-blend-mode: color-burn;
+}
+
+.wind-speed-button{
+    z-index: 10;
+    position: absolute;
+    top: 3%;
+    left: 70%;
+    width: 20%;
+    height: 8%;
+    border-radius: 40px;
+    mix-blend-mode: color-burn;
 }
