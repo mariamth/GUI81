@@ -43,26 +43,77 @@
 }
   
 
+/* Daily Container */
 .DailyWcontainer {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 110px; /* Adjust the value to push it down the page */
     flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
     justify-content: center;
-    margin-bottom: 160px; /* Add margin-bottom to create gap */
 }
 
 .DWlarge-container {
-    width: 370px;
-    height: 500px;
-    border-radius: 40px;
-    background: #d9d9d9;
-    opacity: 45%;
-    mix-blend-mode: plus-darker;
-    padding: 20px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
     flex-shrink: 0;
+    width: 85%;
+    max-height: 60%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.DWlarge-container::-webkit-scrollbar{
+    display: none;
+}
+
+.DWbox-title{
+    flex-shrink: 0;
+    width: 50%;
+    height: 35px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25);
+    color: #ffffff;
+    font-size: 1.5rem;
+    padding: 8px;
+    border-radius: 40px;
+}
+
+.DW-entry{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 6px;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 500;
+    flex: 1;
+}
+
+.entry-day{
+    flex: 3
+}
+
+.entry-icon{
+    flex: 1;
+}
+
+.entry-temp{
+    display: flex;
+    justify-content: space-around;
+    flex: 5;
+}
+
+.entry-desc{
+    font-size: 1.2rem;
+    font-weight: 200;
+    color: #d9d9d9;
+    flex: 2;
 }
 
 
