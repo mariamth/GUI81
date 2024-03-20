@@ -1,4 +1,3 @@
-// Alerts.js
 import High from './assets/High.png';
 import Medium from './assets/Medium.png';
 import Low from './assets/Low.png';
@@ -16,6 +15,7 @@ const Alerts = () => {
   const [windData, setWindData] = useState(null);
   const [cloudData, setCloudData] = useState(null);
 
+  //Conditions set for the each type of alert trigger
   const fetchData = async (condition, expression, amount) => {
     try {
       const requestData = {
@@ -33,7 +33,7 @@ const Alerts = () => {
           {
             name: condition,
             expression: expression,
-            amount: amount // Adjust amount based on condition
+            amount: amount 
           }
         ],
         area: [
@@ -74,7 +74,7 @@ const Alerts = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(long, lat)
+    //console.log(long, lat)
 
     fetchData("temp", "$gt", 273.15);
     fetchData("wind_speed", "$gt", 2);
@@ -84,6 +84,7 @@ const Alerts = () => {
   return (
     <div id="container">
       <h1 id='title'>Incoming Alerts</h1>
+      {/* Severity key Bar */}
       <div class="S-bar">
         <ul>
           <li> <img src={None} class="dot"/>None</li>
@@ -92,7 +93,7 @@ const Alerts = () => {
           <li><img src={High} class="dot"/> High</li>
         </ul>
       </div>
-
+      {/* User Entry to change longitide and lattitude */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -112,8 +113,7 @@ const Alerts = () => {
         />
         <button type="submit">Get Weather</button>
       </form>
-      
-
+      {/* Alert info */}
       {tempData && windData && cloudData ? (
         <>
           <h2>Location: {tempData.area[0].coordinates[0]},{tempData.area[0].coordinates[1]}</h2>
@@ -178,6 +178,7 @@ const AlertItem = ({ trigger, type }) => {
     fetchData();
   }, [trigger]);
 
+  //Get earliest alert of weather condition
   const findEarliestAlert = () => {
     let dataArray = [];
     let earliestDate = Infinity;
@@ -211,6 +212,8 @@ const AlertItem = ({ trigger, type }) => {
   const Edate = new Date(earliestAlert[0]);
   const Evalue = earliestAlert[1]
 
+  //Get latest alert of weather condition
+
   const findLatestAlert = () => {
     let dataArray = [];
     let LatestDate = 0;
@@ -237,12 +240,11 @@ const AlertItem = ({ trigger, type }) => {
     dataArray[1] = value;
     return dataArray;
   };
-
   const latestAlert = findLatestAlert();
   const Ldate = new Date(latestAlert[0]);
   const Lvalue = latestAlert[1]
 
-
+  //formating the end date, declaring the remaining time until the the first occurence starts
   const options = {
     weekday: 'long',
     year: 'numeric',
@@ -250,13 +252,12 @@ const AlertItem = ({ trigger, type }) => {
     day: 'numeric',
     hour: 'numeric',
     minute: 'numeric',
-
   };
-
   const formattedDate = Ldate.toLocaleString(undefined, options);
   const currentTime = Math.floor(Date.now());
   const remainingTime = Math.round((earliestAlert[0] - currentTime) / 1000 / 60 / 60);
 
+//geting background depending on alert type
   function getBackground(type) {
     switch (type) {
       case "Frost":
@@ -267,7 +268,7 @@ const AlertItem = ({ trigger, type }) => {
         return "wind";
     }
   }
-
+//getting severity to display depeding on the value
   function getSeverity(type) {
     switch (type) {
       case "Frost":
