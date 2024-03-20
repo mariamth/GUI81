@@ -1,0 +1,130 @@
+#container {  
+    margin: 5%;
+    padding: 5%;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.809);
+    justify-content: center;
+    align-items: center;
+}
+
+.end {
+    width: 10%;
+    height: 100%;
+    padding: 10px;
+    flex-shrink: 0;
+    border-radius: 0px 20px 20px 0px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+#high {
+    background-color: rgb(201, 17, 17, 0.8);
+}
+
+#medium {
+    background-color: rgba(250, 255, 0, 0.8)
+}
+
+#low {
+    background-color: rgba(105, 200, 89, 0.8);
+}
+
+#none {
+    background-color: rgba(196, 196, 196, 0.8);
+}
+
+h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+#title {
+    flex-shrink: 0;
+    color: navy;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.alertItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    height: 130px;
+    flex-shrink: 0;
+    border-radius: 21px;
+    border: 1px solid #000;
+    padding: 10px;
+    margin: 5%;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+.alert {
+    background-color: rgb(165, 165, 165, 0.6);
+    border-radius: 21px;
+    width: 65%;
+    height: 85px;
+    padding: 10px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#frost {
+    background-image: url(./assets/frosty.jpeg);
+}
+#wind {
+    background-image: url(./assets/windy.jpeg);
+    background-position: center center;
+
+}
+
+#cloud {
+    background-image: url(./assets/cloud.jpeg);
+}
+
+form{
+    margin: 0;
+    padding: 0;
+}
+.S-bar {
+    margin-top: -3%;
+    display: flex; /* Use flexbox for horizontal alignment */
+    justify-content: center; /* Center the flex items horizontally */
+  }
+  
+.S-bar ul {
+    list-style-type: none; /* Remove default list styles */
+    padding: 0 px;
+    
+    display: flex; /* Use flexbox for horizontal layout */
+  }
+  
+  .S-bar li {
+    display: flex; /* Use flexbox for horizontal alignment */
+    align-items: center; /* Center items vertically */
+    margin-right: 50px; /* Adjust the spacing between list items */
+  }
+  
+  .S-bar li img.dot {
+    margin-right:7px; /* Adjust the spacing between the dot and the text */
+  }
+  
