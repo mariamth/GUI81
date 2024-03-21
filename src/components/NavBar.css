@@ -22,7 +22,7 @@
     margin: 5px 0 0 0;
     padding: 10px;
     transition: transform 0.5s ease;
-    transform: scale(1);
+    transform: scale(0.8);
   }
  .nav-selected{
     /*
@@ -34,5 +34,5 @@
     padding: 10px;
     filter: brightness(500%);
     transition: transform 0.3s ease;
-    transform: scale(1.8);
+    transform: scale(1.2);
   }
