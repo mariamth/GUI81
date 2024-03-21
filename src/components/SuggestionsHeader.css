@@ -37,7 +37,7 @@
     transition: background-color 0.3s ease-in;
   }
 
-button:hover{
+.s-button:hover{
     border-radius: 10px;
     background-color: #2c9e75;
     transition: background-color 0.3s ease-in;
