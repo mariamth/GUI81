@@ -32,7 +32,7 @@ const MonthlyWeather = () => {
               <img src={`https://openweathermap.org/img/wn/${day.weather.icon}.png`} alt="icon" />
             </div>
             <div className="entry-temp">
-              <div>{day.temperature.day}°C</div>
+            <div>{day.temperature.min}°C / {day.temperature.max}°C</div>
             </div>
             <div className="entry-desc">{day.weather.description}</div>
           </div>
