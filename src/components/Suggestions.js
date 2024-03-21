@@ -75,15 +75,28 @@ const Suggestions = () => {
       <Header setCurrentScreen={setCurrentScreen} />
       
       {currentScreen === 'suggestions' ? (
+
+        <div className='Scontainer'>
+            <div className="Slarge-container">
+
+              {cropsToGrow.map((crop, index) => (
+                <div key={index} className={`S-entry ${crop.name.toLowerCase()}image`}>
+                  <div className='Sbox-title'>{crop.name}</div>
+                </div>
+              ))}
+
+        {/* 
         <div className="Rectangle5">
           <div className="container2">
             {cropsToGrow.map((crop, index) => (
               <div key={index} className={`container4 ${crop.name.toLowerCase()}image`}>
                 <div className="textbox">
                   <div className={crop.name.toLowerCase()}>{crop.name}</div>
-                </div>
               </div>
-            ))}
+            </div>
+          ))}
+        */}
+
           </div>
         </div>
       ) : (
