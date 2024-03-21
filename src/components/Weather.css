@@ -1,12 +1,11 @@
 /* Styling Sheet for the forcast displays  */
 
-
 /* Current Weather  */
 .CurrentWcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 14%; 
+    padding-top: 10%; 
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 10%; 
