@@ -1,68 +1,28 @@
 .Rectangle5{
-    width: 100%; 
-    height: 100%; 
+    position: absolute;
+    top: 12%;
+    width: 95%; 
+    left: 2.5%;
+    height: 70vh; 
     mix-blend-mode: color-burn; 
     border-radius: 40px
 }
 
-.container1{
-    display:flex;
-}
-
-a{
-    text-decoration: none;
-}
-
-.Rectangle24{ 
-    background: #D9D9D9; 
-    border-radius: 19px;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 50 px;
-    margin-left: 5%;
-    margin-right: 5%
-}
-
-.SUGGESTION{ 
-    color: #69C859; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
 .container2{
-    margin-top: 1000 px;
-    width: 100%; 
-    height: 70vh; 
+    top: 12%;
+    width: 95%; 
+    left: 2.5%;
+    height: 65vh; 
     background: #D9D9D9; 
     border-radius: 20px;
     box-sizing: border-box;
-    margin-top: 5%;
-    position: relative; 
-}
-
-.searchbox{
-    margin-top: 10px;
-    border-radius: 20px;
-}
-
-.searchbar{
-    text-align: center;
-    align-items: center;
+    position: absolute; 
 }
 
 .container4{
     box-shadow: 4px 4px 4px; 
     border-radius: 21px; 
-    border: 1px black solid; 
-    background: grey;
+    border: 1px black solid;
     margin-top: 2%;
     margin-bottom: 2%;
     margin-left: 2.5%;
@@ -78,27 +38,6 @@ a{
     background-image: url('./assets/wheat\ image.jpg');
 }
 
-.appleimage{
-    background-image: url('./assets/apple.jpg');
-}
-
-.raddishimage{
-    background-image:url('./assets/raddish\ image.jpg');
-}
-
-.carrotimage{
-    background-image:url('./assets/carrot\ image.jpg')
-}
-
-.textbox{
-    display: inline-block; /* Display as inline-block to fit the content */
-    border-radius: 10px;
-    border: 1px solid black; /* Specify the border style */
-    background-color: white;
-    padding: 5px 10px; /* Add padding for spacing */
-    text-align: center; /* Center the text horizontally */
-}
-
 .wheat{ 
     color: black; 
     font-size: 24px; 
@@ -107,6 +46,10 @@ a{
     word-wrap: break-word;
     align-items: center;
     text-align:center;
+}
+
+.appleimage{
+    background-image: url('./assets/apple.jpg');
 }
 
 .apple{ 
@@ -119,6 +62,10 @@ a{
     text-align:center;
 }
 
+.raddishimage{
+    background-image:url('./assets/raddish\ image.jpg');
+}
+
 .raddish{ 
     color: black; 
     font-size: 24px; 
@@ -129,7 +76,25 @@ a{
     text-align:center;
 }
 
+.carrotimage{
+    background-image:url('./assets/carrot\ image.jpg')
+}
+
 .carrot{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+} 
+
+.cucumberimage{
+    background-image:url('./assets/Crops/Cucumbers.jpg');
+}
+
+.cucumber{
     color: black; 
     font-size: 24px; 
     font-family: Barlow; 
@@ -139,22 +104,184 @@ a{
     text-align:center;
 }
 
-/*.container5{
+.grapeimage{
+    background-image:url('./assets/Crops/Grapes.png');
+}
+
+.grape{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.greenonionimage{
+    background-image:url('./assets/Crops/GreenOnions.jpg');
+}
+
+.greenonion{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.lettuceimage{
+    background-image:url('./assets/Crops/Lettuce.jpg');
+}
+
+.lettuce{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.onionimage{
+    background-image:url('./assets/Crops/Onions.jpg');
+}
+
+.onion{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.peasimage{
+    background-image:url('./assets/Crops/Peas.jpg');
+}
+
+.peas{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.pepperimage{
+    background-image:url('./assets/Crops/Peppers.png');
+}
+
+.pepper{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.potatoimage{
+    background-image:url('./assets/Crops/Potatoes.jpg');
+}
+
+.potato{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.spinachimage{
+    background-image:url('./assets/Crops/Spinach.png');
+}
+
+.spinach{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.cornimage{
+    background-image:url('./assets/Crops/SweetCorn.jpg');
+}
+
+.corn{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.sweetpotatoimage{
+    background-image:url('./assets/Crops/SweetPotatoes.jpg');
+}
+
+.sweetpotato{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.tomatoimage{
+    background-image:url('./assets/Crops/Tomatoes.png');
+}
+
+.tomato{
+    color: black; 
+    font-size: 24px; 
+    font-family: Barlow; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    align-items: center;
+    text-align:center;
+}
+
+.textbox{
+    display: inline-block; 
+    border: 1px solid black; 
+    background-color: white;
+    padding: 5px 10px; 
+    text-align: center; 
+}
+
+
+
+.container5{
     display:flex;
 }
-/*
+
 .container6{
     background: #D9D9D9; 
     border-radius: 19px;
-    justify-content: center; /* Horizontal centering 
-    align-items: center;  Vertical centering 
+    justify-content: center; 
+    align-items: center;  
     padding: 20px;
     box-sizing: border-box;
     margin: 7%;
 }
-*/
-.textbottom{
-    box-sizing: border-box;
-    align-items: center;
-    text-align:center;
+
+.suggestions-container{
+    margin-top: 100px;
 }

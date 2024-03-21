@@ -116,7 +116,6 @@ ul li::before{
     border-radius: 50%;
     background-size:cover;
     background-position: center;
-    background-image: url('./assets/unchecked.jpg');
     left: 100px; /* Adjust the left position to position the image */
     top: 50%; /* Position the image vertically */
     transform: translateY(-50%); /* Center the image vertically */
