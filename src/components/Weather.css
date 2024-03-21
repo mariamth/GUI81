@@ -1,49 +1,64 @@
+/* Styling Sheet for the forcast displays  */
+
+
+/* Current Weather  */
 .CurrentWcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 110px; /* Adjust the value to push it down the page */
+    padding-top: 14%; 
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 160px; /* Add margin-bottom to create gap */
+    margin-bottom: 10%; 
+    color: white;
 }
-  
-.CWlarge-container {
-    width: 370px;
-    height: 259px;
-    border-radius: 40px;
-    background: #d9d9d9;
-    opacity: 45%;
-    mix-blend-mode: plus-darker;
-    padding: 20px;
-    margin-bottom: 20px;
-    flex-shrink: 0;
-}
-  
-.small-container {
-    width: 108px;
-    height: 296px;
-    border-radius: 40px;
-    background: #d9d9d9;
-    opacity: 45%;
-    mix-blend-mode: plus-darker;
-    padding: 20px;
-    margin-bottom: 20px;
-    flex-shrink: 0;
 
+/* Styles for Large Weather Container */
+.CWlarge-container {
+    position: static; /* Positioning */
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 35%;
+    max-height: 60%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-bottom: 2%; 
 }
+
+/* Styles for Large Icon */
+.large-icon {
+    width: 100px; 
+    height: 100px; 
+    margin-right: 20px; 
+}
+
+/* Styles for Small Container */
+.small-container {
+    width: 15%;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.4); /* Match background color */
+    padding: 20px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+
+/* Styles for Small Container Wrapper */
 .small-container-wrapper {
     display: flex;
     padding-left: 20px;
 }
-  
+
 .small-container {
     flex: 1; /* Grow to fill available space equally */
     margin-right: 20px;
 }
-  
 
-/* Daily Container */
+/* Daily Weather  */
 .DailyWcontainer {
     display: flex;
     flex-direction: column;
@@ -96,7 +111,7 @@
 }
 
 .entry-day{
-    flex: 3
+    flex: 3;
 }
 
 .entry-icon{
@@ -116,26 +131,28 @@
     flex: 2;
 }
 
-
-/*Monthly container*/
+/* Monthly Container */
 .MonthlyWcontainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 110px; /* Adjust the value to push it down the page */
+    padding-top: 110px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 160px; /* Add margin-bottom to create gap */
-}
-.MWlarge-container{
-    width: 370px;
-    height: 500px;
-    border-radius: 40px;
-    background: #d9d9d9;
-    opacity: 45%;
-    mix-blend-mode: plus-darker;
-    padding: 20px;
-    margin-bottom: 20px;
-    flex-shrink: 0;
+    margin-bottom: 160px; 
+    color: white;
 }
 
+.MWlarge-container{
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    width: 85%;
+    max-height: 60%;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 40px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}

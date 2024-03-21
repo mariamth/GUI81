@@ -8,7 +8,7 @@ import './Weather.css';
 const DailyWeather = () => {
 
   const [tenDayWeather, setTenDayWeather] = useState([]);
-  const city = 'Paris';
+  const city = 'London';
 
   useEffect(() => {
     const fetchData = async () => {
