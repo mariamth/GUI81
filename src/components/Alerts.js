@@ -10,12 +10,15 @@ const Alerts = () => {
     const [weatherResults, setWeatherResults] = useState(null);
     const [city, setCity] = useState('London');
     const [fiveDayWeather, setFiveDayWeather] = useState(null);
-    //get weather forecast
+
+    //get weather forecast (temp, cloud coverage, wind speed)
     const fetchWeatherData = async (city) => {
         try {
             const fiveDayData = await get5DayData(city);
             setFiveDayWeather(fiveDayData);
+            //call to break foreacst down  into dictionary of results
             setWeatherResults(getWeatherResults(fiveDayData));
+            console.log(getWeatherResults(fiveDayData));
         } catch (error) {
             setFiveDayWeather(null);
             setWeatherResults(getWeatherResults(null))
@@ -27,6 +30,7 @@ const Alerts = () => {
         fetchWeatherData(city)
     }, []);
 
+    //update the city when input changes
     const handleInputChange = (e) => {
         setCity(e.target.value);
     };
@@ -35,6 +39,8 @@ const Alerts = () => {
         fetchWeatherData(city);
     };
 
+    // function to fill a results dictionary of the value along with the time of first
+    // occurence and the highest occurence of the alerts
     function getWeatherResults(weatherData) {
         let result = {
             firstFrost: null,
@@ -47,32 +53,35 @@ const Alerts = () => {
         if (weatherData=== null){
             return
         }
-
+        //looping through each 3 hour interval
         weatherData.forEach(data => {
+            //set first frost if temp is lower then 0
             if (data.temperature < 0 && result.firstFrost === null) {
                 result.firstFrost = { value: data.temperature, date: data.date, hour: data.time };
             }
-
+            //updates lowestTemp
             if (data.temperature < result.lowestTemp.value) {
                 result.lowestTemp.value = data.temperature;
                 result.lowestTemp.date = data.date;
                 result.lowestTemp.hour = data.time;
             }
 
+            //set first cloud value if coverage is more then 25%
             if (data.clouds > 25 && result.firstCloud === null) {
                 result.firstCloud = { value: data.clouds, date: data.date, hour: data.time };
             }
-
+            //updaytes highest cloud coverage
             if (data.clouds > result.highestCloud.value) {
                 result.highestCloud.value = data.clouds;
                 result.highestCloud.date = data.date;
                 result.highestCloud.hour = data.time;
             }
 
+            //set first wind value if wind speed is more then 2 m/s
             if (data.wind_speed > 2 && result.firstWind === null) {
                 result.firstWind = { value: data.wind_speed, date: data.date, hour: data.time };
             }
-
+            //updaytes highest wind speed
             if (data.wind_speed > result.highestWindSpeed.value) {
                 result.highestWindSpeed.value = data.wind_speed;
                 result.highestWindSpeed.date = data.date;
@@ -81,7 +90,6 @@ const Alerts = () => {
         });
         return result; 
     }
-
 
     return (
         <div id="screen">
@@ -97,6 +105,7 @@ const Alerts = () => {
                         <li><img src={High} class="dot" /> High</li>
                     </ul>
                 </div>
+                {/* input box to change city */}
                 <form onSubmit={handleSubmit}>
                     <input
                         type="text"
@@ -107,6 +116,8 @@ const Alerts = () => {
                     <button type="submit">Get Weather</button>
                 </form><br/>
                 <h2>Location: {city}</h2><br />
+
+                {/* Alert bars */}
                 <div class="alertContainer">
                     {weatherResults ? (
                         <>
@@ -115,6 +126,7 @@ const Alerts = () => {
                             <AlertItem type="High Cloud Coverage" wResults={weatherResults} />
                         </>
                     ) : (
+                        // if city/country doesnt exist
                         <p>Failed to load alerts, please enter a country or city</p>
                     )}
                 </div>
@@ -124,8 +136,9 @@ const Alerts = () => {
 
 };
 const AlertItem = ({ type, wResults }) => {
-    //checking if there is data value low/high enough to trigger alert
-    function isDataNull(type) {
+
+    //checking for occurence of first alert for each type
+    function isAlert(type) {
         console.log(11, wResults)
         switch (type) {
             case "Frost":
@@ -138,10 +151,11 @@ const AlertItem = ({ type, wResults }) => {
                 return false;
         }
     };
-    //first alert
+
+    //get time of first alert
     function getStartTime(type) {
         let startTime
-        if (isDataNull(type)) {
+        if (isAlert(type)) {
             return None
         }
         else {
@@ -159,10 +173,10 @@ const AlertItem = ({ type, wResults }) => {
         }
         return startTime
     }
-    //last alert
+    //get time of last alert
     function getEndTime(type) {
         let endTime
-        if (isDataNull(type)) {
+        if (isAlert(type)) {
             return None
         }
         else {
@@ -192,6 +206,7 @@ const AlertItem = ({ type, wResults }) => {
     const endTime = getEndTime(type);
     const formattedDate = endTime.toLocaleString(undefined, options);
 
+    //get the difference between current time and first alert ime
     function getRemaingTime(time) {
         const currentTime = Math.floor(Date.now());
         const remainingTime = Math.round((time - currentTime) / 1000 / 60 / 60);
@@ -209,7 +224,7 @@ const AlertItem = ({ type, wResults }) => {
                 return "wind";
         }
     }
-    //getting severity to display depeding on the value
+    //getting severity of alert to display depending on the value
     function getSeverity(type) {
         console.log("S", wResults)
         switch (type) {
@@ -228,27 +243,30 @@ const AlertItem = ({ type, wResults }) => {
                     (wResults.highestWindSpeed.value > 16 ? "high" :
                         (wResults.highestWindSpeed.value > 10 ? "medium" : "low")) :
                     "none";
-
         }
     }
     return (
+        //changes background according to type
         <div class="alertItem" id={getBackground(type)}>
             <div class="alert" >
-                {isDataNull(type) ? (
+                {isAlert(type) ? (
                     <>
                         <h2>{type}</h2>
                         <p>No {type} Warning</p>
                     </>
                 ) : (
                     <>
+                    {/* display alert info */}
                         <text style={{ fontWeight: 'bold' }}>{type}</text><br />
                         {type === "Frost" && (<>{wResults.lowestTemp.value} °C</>)}
                         {type === "High Cloud Coverage" && (<>{wResults.highestCloud.value}% Cloud Coverage</>)}
                         {type === "High Winds" && (<>{wResults.highestWindSpeed.value} m/s</>)}
                         <br />
+                        display time info
                         In {<>{getRemaingTime(getStartTime(type))}</>} hours <br />
                         Expires {formattedDate}<br />
                     </>)}
+                    {/* display severity */}
                 < div class="end" id={getSeverity(type)}></div>
             </div>
         </div >
