@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Weather.css';
-import { getMonthlyWeather } from './useful_functions/getMonthlyWeather';
+import getMonthlyWeather from './useful_functions/getMonthlyWeather';
 
 const MonthlyWeather = () => {
   const [monthlyWeather, setMonthlyWeather] = useState([]);
   const [error, setError] = useState('');
 
   useEffect(() => {
-    const fetchMonthlyWeatherData = async () => {
+    const fetchMonthlyWeather = async () => {
       try {
-        const cityName = 'London';
-        const monthlyData = await getMonthlyWeather(cityName);
+        const monthlyData = await getMonthlyWeather('London');
         setMonthlyWeather(monthlyData);
         setError('');
       } catch (error) {
@@ -19,14 +18,25 @@ const MonthlyWeather = () => {
       }
     };
 
-    fetchMonthlyWeatherData();
+    fetchMonthlyWeather();
   }, []);
 
   return (
     <div className="MonthlyWcontainer">
       <h1>Monthly Weather</h1>
       <div className="MWlarge-container">
-        {/* Render monthly weather data here */}
+        {monthlyWeather.map((day, index) => (
+          <div className="MW-entry" key={day.date}>
+            <div className="entry-day">{new Date(day.date * 1000).toLocaleDateString()}</div>
+            <div className="entry-icon">
+              <img src={`https://openweathermap.org/img/wn/${day.weather.icon}.png`} alt="icon" />
+            </div>
+            <div className="entry-temp">
+              <div>{day.temperature.day}°C</div>
+            </div>
+            <div className="entry-desc">{day.weather.description}</div>
+          </div>
+        ))}
       </div>
       {error && <p>{error}</p>}
     </div>

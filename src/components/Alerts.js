@@ -262,7 +262,7 @@ const AlertItem = ({ type, wResults }) => {
                         {type === "High Cloud Coverage" && (<>{wResults.highestCloud.value}% Cloud Coverage</>)}
                         {type === "High Winds" && (<>{wResults.highestWindSpeed.value} m/s</>)}
                         <br />
-                        display time info
+                        {/*display time info*/}
                         In {<>{getRemaingTime(getStartTime(type))}</>} hours <br />
                         Expires {formattedDate}<br />
                     </>)}
