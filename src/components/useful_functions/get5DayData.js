@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const get5DayData = async (cityName) => {
-    const apiKey = "041c6095b46899deeb41d26b502d85a7"; // Replace "YOUR_API_KEY" with your OpenWeatherMap API key
+    const apiKey = "041c6095b46899deeb41d26b502d85a7"; 
     const baseUrl = "http://api.openweathermap.org/data/2.5/forecast";
     const params = {
         q: cityName,

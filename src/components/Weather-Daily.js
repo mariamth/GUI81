@@ -29,7 +29,7 @@ const DailyWeather = () => {
     <div className="DailyWcontainer">
 
       <div className="DWlarge-container">
-        <div className='DWbox-title'>10-Day forecast</div>
+        <div className='DWbox-title'>10-Day Forecast</div>
 
         
         {tenDayWeather.map((day, index) => (

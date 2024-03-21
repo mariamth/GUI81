@@ -37,6 +37,7 @@ const CurrentWeather = () => {
   return (
     <div className="CurrentWcontainer"> 
       <div className="CWlarge-container">
+      <div className='CWbox-title'>Current Forecast</div>
         {/* Display current weather info */}
         {weatherData && (
           <div className="current-weather-info">
