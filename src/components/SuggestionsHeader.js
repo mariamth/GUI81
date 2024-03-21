@@ -1,34 +1,71 @@
-import React from 'react';
-import {  BrowserRouter as Router, Link, useLocation} from 'react-router-dom';
-
-import home from './assets/navbar/icon_home.png'
-
-//import './Header.css';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom'; // Remove useLocation if not used
+import './planner.css';
+import home from './assets/navbar/icon_home.png';
 
 const Header = () => {
+  const [inputValue, setInputValue] = useState('');
+  const [tasks, setTasks] = useState([]);
 
-  // Updates variable with URL
-  const location = useLocation();
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const addTask = () => {
+    if (inputValue.trim() === '') {
+      alert('You must write something!');
+    } else {
+      setTasks([...tasks, inputValue]);
+      setInputValue('');
+    }
+  };
+
+  const deleteTask = (index) => {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
+  };
 
   return (
-    <>
-      <nav id='header-background'>
-        <ul id='list'>
-
-          {/* Compares URL pathname and changes tag id based on output
-          Used to dynamically update the icons without a full page reload*/}
-
-          <li id={location.pathname =='/suggestions' ? 'selected-li' : 'default-li'}>
-            <Link to='/suggestions'><img src={home} alt="Suggestions"></img></Link>
-          </li>
-
-          <li id={location.pathname === '/suggestions/planner' ? 'selected-li' : 'default-li'}>
-            <Link to='/suggestions/planner'><img src={home} alt="Planner"></img></Link>
-          </li>
-
-        </ul>
-      </nav>
-    </>
+    <div>
+      <div className="container1">
+        <div>
+          <div className="container2">
+            <div className="container3">
+              <Link to="/suggestion">
+                <div className="PLANNER">SUGGESTION</div>
+              </Link>
+            </div>
+            <div className="container3">
+              <Link to="/suggestionHeaderS">
+                <div className="PLANNER">PLANNER</div>
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div className="container6">
+            <div className="Textforplanner">Planner</div>
+            <input
+              type="text"
+              id="input-box"
+              placeholder="Add your list"
+              value={inputValue}
+              onChange={handleInputChange}
+            />
+            <button id="button1" onClick={addTask}>Add</button>
+            <ul id="list-of-notes">
+              {tasks.map((task, index) => (
+                <li key={index}>
+                  {task}
+                  <span onClick={() => deleteTask(index)}>&times;</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
