@@ -115,7 +115,7 @@
 .weather-details-p{
     position: absolute;
     top: 80%;
-    left: 0%;
+    left: 10%;
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
@@ -125,7 +125,7 @@
 .Weather-Map {
     z-index: 4;
     position: absolute;
-    top: 15%;
+    top: 10%;
     left: 4%;
     width: 64%;
     height: 66%; 
@@ -142,6 +142,8 @@
     height: 100%;
     object-fit: cover; 
 }
+
+
 
 
 .map-header{
@@ -172,8 +174,8 @@
 .temp-button{
     z-index: 10;
     position: absolute;
-    top: 3%;
-    left: 10%;
+    top: 5%;
+    left: 5%;
     width: 20%;
     height: 8%;
     border-radius: 40px;
@@ -200,4 +202,29 @@
     height: 8%;
     border-radius: 40px;
     mix-blend-mode: color-burn;
+}
+
+
+.thermometer{
+    z-index: 9;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 45%;
+}
+
+.Humid{
+    z-index: 9;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 59%;
+}
+
+.Wind_Speed{
+    z-index: 9;
+    position: absolute;
+    width: 30px;
+    height: 35px;
+    top: 69%;
 }

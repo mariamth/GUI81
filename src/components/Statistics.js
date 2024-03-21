@@ -3,6 +3,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';
+import Thermometer from './assets/Thermometer.png';
+import Humid from './assets/Humid.png';
+import Wind_Speed from './assets/Wind_Speed.png';
 import { getWeather } from './useful_functions/getWeather';
 import get5DayData from './useful_functions/get5DayData';
 import Background from './Background';
@@ -95,6 +98,9 @@ function Statistics() {
   return (
     <div className='Stats-Screen'>
       <div className='weather-details-container'>
+      <img src={Thermometer} className='thermometer'/>
+      <img src={Humid} className='Humid'/>
+      <img src={Wind_Speed} className='Wind_Speed'/>
         {weatherData && (
           <div className="weather-details-header">
             <h2>Weather Details</h2>
@@ -115,10 +121,6 @@ function Statistics() {
         <canvas id="weatherChart"></canvas>
       </div>
 
-      <div>
-        <h2 className='map-header'> Weather Map </h2>
-      </div>
-
        {/* Render map */}
        <div className='Weather-Map'>
          <iframe
@@ -130,9 +132,9 @@ function Statistics() {
 
       {/* Buttons for selecting parameter */}
       <div className='chart-button-container'>
-        <button className='temp-button' onClick={() => handleParameterChange('temperature')}>Temperature</button>
+        <button className='temp-button' onClick={() => handleParameterChange('temperature')}>Temp</button>
         <button className='humidity-button' onClick={() => handleParameterChange('humidity')}>Humidity</button>
-        <button className='wind-speed-button' onClick={() => handleParameterChange('windSpeed')}>Wind Speed</button>
+        <button className='wind-speed-button' onClick={() => handleParameterChange('windSpeed')}>Wind</button>
       </div>
 
       <Background weatherData={weatherData} />
