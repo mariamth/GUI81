@@ -1,0 +1,152 @@
+/* main container */
+#container {
+    margin: .5% 5% .5% 5%;
+    padding: 1% 5% 3% 5%;
+    flex-shrink: 0;
+    border-radius: 40px;
+    background: rgba(0, 0, 0, 0.4);
+    position: relative;
+    box-sizing: border-box;
+}
+
+#title {
+    flex-shrink: 0;
+    color: navy;
+    text-align: center;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 800;
+    padding: 0;
+    margin: 0;
+    line-height: normal;
+}
+
+form {
+    margin: 0;
+    padding: 0;
+}
+/*container for alerts*/
+.alertContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+/*individual alert bar*/
+.alertItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 85%;
+    flex-shrink: 0;
+    height: 80px;
+    border-radius: 21px;
+    border: 1px solid #000;
+    padding: 3%;
+    margin: 2% 5% 2% 5%;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+}
+
+/*alert text box*/
+.alert {
+    background-color: rgb(165, 165, 165, 0.6);
+    border-radius: 21px;
+    width: 65%;
+    height: 80px;
+    padding: 10px;
+    flex-shrink: 0;
+    stroke-width: 1px;
+    stroke: #000;
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/*Severity indicator at the end of alerts and colour*/
+.end {
+    width: 10%;
+    height: 100%;
+    padding: 10px;
+    flex-shrink: 0;
+    border-radius: 0px 20px 20px 0px;
+    border: 1px solid #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    box-sizing: border-box;
+}
+
+#high {
+    background-color: rgb(201, 17, 17, 0.8);
+}
+
+#medium {
+    background-color: rgba(250, 255, 0, 0.8)
+}
+
+#low {
+    background-color: rgba(105, 200, 89, 0.8);
+}
+
+#none {
+    background-color: rgba(196, 196, 196, 0.8);
+}
+
+/* background for alert type */
+#frost {
+    background-image: url(./assets/frosty.jpeg);
+}
+
+#wind {
+    background-image: url(./assets/windy.jpeg);
+    background-position: center center;
+
+}
+
+#cloud {
+    background-image: url(./assets/cloud.jpeg);
+}
+
+/* Severity key bar */
+.S-bar {
+    margin-top: -3%;
+    flex-shrink: 0;
+    font-size: 15px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+}
+
+.S-bar ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+
+}
+.S-bar li {
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.S-bar li img.dot {
+    width: 15px;
+    margin-right: 5px;
+}
