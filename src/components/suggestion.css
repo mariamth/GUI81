@@ -47,291 +47,37 @@
     font-weight: 500;
     flex: 1;
 }
+.agricultureimage{ background-image: url('./assets/Crops/Extreme.png');}
 
-.Rectangle5{
-    position: absolute;
-    top: 12%;
-    width: 95%; 
-    left: 2.5%;
-    height: 70vh; 
-    mix-blend-mode: color-burn; 
-    border-radius: 40px
-}
+.wheatimage{ background-image: url('./assets/Crops/Wheat.jpg');}
 
-.container2{
-    top: 12%;
-    width: 95%; 
-    left: 2.5%;
-    height: 65vh; 
-    background: #D9D9D9; 
-    border-radius: 20px;
-    box-sizing: border-box;
-    position: absolute; 
-}
+.appleimage{ background-image: url('./assets/Crops/Apple.jpg');}
 
-.container4{
-    box-shadow: 4px 4px 4px; 
-    border-radius: 21px; 
-    border: 1px black solid;
-    margin-top: 2%;
-    margin-bottom: 2%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-    height: 20%;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+.raddishimage{ background-image: url('./assets/Crops/Raddish.jpg');}
 
-.wheatimage{
-    background-image: url('./assets/wheat\ image.jpg');
-}
+.carrotimage{ background-image: url('./assets/Crops/Carrots.jpg')}
 
-.wheat{ 
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
+.cucumberimage{ background-image: url('./assets/Crops/Cucumbers.jpg');}
 
-.appleimage{
-    background-image: url('./assets/apple.jpg');
-}
+.grapesimage{ background-image: url('./assets/Crops/Grapes.png')}
 
-.apple{ 
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
+.greenonionimage{ background-image: url('./assets/Crops/GreenOnions.jpg');}
 
-.raddishimage{
-    background-image:url('./assets/raddish\ image.jpg');
-}
+.lettuceimage{ background-image:url('./assets/Crops/Lettuce.jpg');}
 
-.raddish{ 
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
+.onionsimage{ background-image:url('./assets/Crops/Onions.jpg');}
 
-.carrotimage{
-    background-image:url('./assets/carrot\ image.jpg')
-}
+.peasimage{ background-image:url('./assets/Crops/Peas.jpg');}
 
-.carrot{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-} 
+.peppersimage{ background-image:url('./assets/Crops/Peppers.png');}
 
-.cucumberimage{
-    background-image:url('./assets/Crops/Cucumbers.jpg');
-}
+.potatoimage{ background-image:url('./assets/Crops/Potatoes.jpg');}
 
-.cucumber{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
+.spinachimage{ background-image:url('./assets/Crops/Spinach.png');}
 
-.grapeimage{
-    background-image:url('./assets/Crops/Grapes.png');
-}
+.cornimage{ background-image:url('./assets/Crops/SweetCorn.jpg');}
 
-.grape{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
+.potatoesimage{ background-image:url('./assets/Crops/SweetPotatoes.jpg');}
 
-.greenonionimage{
-    background-image:url('./assets/Crops/GreenOnions.jpg');
-}
+.tomatoimage{ background-image:url('./assets/Crops/Tomatoes.png');}
 
-.greenonion{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.lettuceimage{
-    background-image:url('./assets/Crops/Lettuce.jpg');
-}
-
-.lettuce{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.onionimage{
-    background-image:url('./assets/Crops/Onions.jpg');
-}
-
-.onion{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.peasimage{
-    background-image:url('./assets/Crops/Peas.jpg');
-}
-
-.peas{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.pepperimage{
-    background-image:url('./assets/Crops/Peppers.png');
-}
-
-.pepper{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.potatoimage{
-    background-image:url('./assets/Crops/Potatoes.jpg');
-}
-
-.potato{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.spinachimage{
-    background-image:url('./assets/Crops/Spinach.png');
-}
-
-.spinach{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.cornimage{
-    background-image:url('./assets/Crops/SweetCorn.jpg');
-}
-
-.corn{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.sweetpotatoimage{
-    background-image:url('./assets/Crops/SweetPotatoes.jpg');
-}
-
-.sweetpotato{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.tomatoimage{
-    background-image:url('./assets/Crops/Tomatoes.png');
-}
-
-.tomato{
-    color: black; 
-    font-size: 24px; 
-    font-family: Barlow; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-.textbox{
-    display: inline-block; 
-    border: 1px solid black; 
-    background-color: white;
-    padding: 5px 10px; 
-    text-align: center; 
-}
-
-
-
-.container5{
-    display:flex;
-}
-
-.container6{
-    background: #D9D9D9; 
-    border-radius: 19px;
-    justify-content: center; 
-    align-items: center;  
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 7%;
-}
-
-.suggestions-container{
-    margin-top: 100px;
-}

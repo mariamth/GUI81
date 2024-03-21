@@ -19,6 +19,7 @@ const Suggestions = () => {
         if (weatherData) {
           const temperature = weatherData.temperature;
 
+
           // Determine crops based on temperature
           if (temperature > 5 && temperature<=10 ) {
             crops = [
@@ -48,7 +49,7 @@ const Suggestions = () => {
 
           else if (temperature > 20 && temperature<=25){
             crops = [
-              { name: "Sweet Potatoes", image: "assets/SweetPotatoes"},
+              { name: "Sweet Potatoes", image: "assets/sweet"},
               { name: "Wheat", image: "assets/wheat"},
               { name: "Tomato", image: "assets/tomatoes"},
               { name: "Corn", image: "assets/SweetCorn"}
@@ -57,7 +58,7 @@ const Suggestions = () => {
 
           else {
             crops = [
-              { name: "Extreme Weather - No crops suitable for agriculture.", image: "/assets/Extreme.jpg" }
+              { name: "Extreme Weather - No crops suitable for agriculture", image: "/assets/Extreme.jpg" }
             ];
           }
         }
