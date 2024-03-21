@@ -40,7 +40,7 @@ const Suggestions = () => {
           else if (temperature > 15 && temperature<=20){
             crops = [
               { name: "Peppers", image: "assets/peppers"},
-              { name: "corn", image: "assets/SweetCorn"},
+              { name: "Corn", image: "assets/SweetCorn"},
               { name: "Onions", image: "assets/onions"},
               { name: "Green Peas", image: "assets/peas"}
             ]
@@ -49,7 +49,7 @@ const Suggestions = () => {
           else if (temperature > 20 && temperature<=25){
             crops = [
               { name: "Sweet Potatoes", image: "assets/SweetPotatoes"},
-              { name: "wheat", image: "assets/wheat"},
+              { name: "Wheat", image: "assets/wheat"},
               { name: "Tomato", image: "assets/tomatoes"},
               { name: "Corn", image: "assets/SweetCorn"}
             ]
@@ -57,7 +57,7 @@ const Suggestions = () => {
 
           else {
             crops = [
-              { name: "Extreme Weather - No Crops suitable for agriculture.", image: "/assets/Extreme.jpg" }
+              { name: "Extreme Weather - No crops suitable for agriculture.", image: "/assets/Extreme.jpg" }
             ];
           }
         }
