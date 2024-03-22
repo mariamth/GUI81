@@ -3,7 +3,7 @@
 
 npm install axios\
 npm install chart.js@^3.0.0\
-npm install web-vitals\
+npm install web-vitals
 
 
 
