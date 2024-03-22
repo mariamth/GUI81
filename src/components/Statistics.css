@@ -47,17 +47,20 @@
     color: white;
 }
 
+
+
 .Search-Button {
     background-color: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
     position: absolute;
-    left: 55%; 
-    top: 55%; 
+    left: 3.9%; 
+    top: 70%; 
     transform: translateY(-50%);
     height: 100%;
 }
+
 
 .Search-Button img {
     width: 24px;
