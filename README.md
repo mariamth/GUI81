@@ -1,5 +1,12 @@
 # notices
-## changes
+## Install these  Dependencies
+
+npm install axios@1.6.8
+npm install chart.js@^3.0.0
+npm install leaflet
+npm install web-vitals@2.1.4
+
+
 
 # Getting Started with Create React App
 
