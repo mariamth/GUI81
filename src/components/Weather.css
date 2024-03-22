@@ -70,7 +70,7 @@
 }
 
 /* Daily Weather  */
-.DailyWcontainer {
+.Wcontainer {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -79,7 +79,7 @@
     justify-content: center;
 }
 
-.DWlarge-container {
+.Wlarge-container {
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
@@ -93,11 +93,11 @@
     overflow-x: hidden;
 }
 
-.DWlarge-container::-webkit-scrollbar{
+.Wlarge-container::-webkit-scrollbar{
     display: none;
 }
 
-.DWbox-title{
+.Wbox-title{
     flex-shrink: 0;
     width: 50%;
     height: 35px;
@@ -109,7 +109,7 @@
     border-radius: 40px;
 }
 
-.DW-entry{
+.W-entry{
     display: flex;
     width: 100%;
     align-items: center;
@@ -140,36 +140,4 @@
     font-weight: 200;
     color: #d9d9d9;
     flex: 2;
-}
-
-/* Monthly Container */
-.MonthlyWcontainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 110px;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 160px; 
-    color: white;
-}
-
-.MW-entry {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px; 
-}
-
-.MWlarge-container{
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    width: 85%;
-    max-height: 60%;
-    align-items: center;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 20px;
-    border-radius: 40px;
-    overflow-y: auto;
-    overflow-x: hidden;
 }

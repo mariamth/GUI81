@@ -26,14 +26,14 @@ const DailyWeather = () => {
   const dayNames = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
   return (
-    <div className="DailyWcontainer">
+    <div className="Wcontainer">
 
-      <div className="DWlarge-container">
-        <div className='DWbox-title'>10-Day Forecast</div>
+      <div className="Wlarge-container">
+        <div className='Wbox-title'>10-Day Forecast</div>
 
         
         {tenDayWeather.map((day, index) => (
-          <div className="DW-entry" key={index}>
+          <div className="W-entry" key={index}>
             <div className='entry-day'>{index === 0 ? 'TODAY' : dayNames[new Date(day.date * 1000).getDay()]}</div>
             <div className='entry-icon'>
               <img src= {`https://openweathermap.org/img/wn/${day.icon}@2x.png`} alt='icon'/>

@@ -22,14 +22,17 @@ const MonthlyWeather = () => {
   }, []);
 
   return (
-    <div className="MonthlyWcontainer">
-      <h1>Monthly Weather</h1>
-      <div className="MWlarge-container">
+    <div className="Wcontainer">
+
+      <div className="Wlarge-container">
+        <div className='Wbox-title'>Monthly forecast</div>
+
+
         {monthlyWeather.map((day, index) => (
-          <div className="MW-entry" key={day.date}>
+          <div className="W-entry" key={day.date}>
             <div className="entry-day">{new Date(day.date * 1000).toLocaleDateString()}</div>
             <div className="entry-icon">
-              <img src={`https://openweathermap.org/img/wn/${day.weather.icon}.png`} alt="icon" />
+              <img src={`https://openweathermap.org/img/wn/${day.weather.icon}@2x.png`} alt="icon" />
             </div>
             <div className="entry-temp">
             <div>{day.temperature.min}°C / {day.temperature.max}°C</div>
