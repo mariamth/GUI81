@@ -10,7 +10,7 @@
     height: 40%;
 }
 
-input[type="text"] {
+.planner-input[type="text"] {
     display: flex;
     width: 200px; /* Adjust width as needed */
     height: 50px; /* Adjust height as needed */
@@ -50,11 +50,31 @@ input[type="text"] {
     display: inline-block; /* Display inputs horizontally */
 }
 
+.add-button,
 .remove-button{
-    display: flex;
-    font-size: 20px;
-    margin-bottom: 5%;
-    border-radius: 20px;
+    border: none;
+    background: none;
+    cursor: pointer; /* Use default cursor */
+    
+    list-style-type: none;
+    text-align: center;
+    border-radius: 10px;
+    padding: 20px 20px; /* Adjust padding for smaller screens */
+    flex: 1;
+
+    color: white;
+    font-size: larger;
+    font-weight: 450;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease-in;
+}
+
+.add-button:hover,
+.remove-button:hover{
+    border-radius: 10px;
+    background-color: #2c9e75;
+    transition: background-color 0.3s ease-in;
 }
 
 .list-of-item{
@@ -76,7 +96,7 @@ input[type="text"] {
 }
 
 .list-box-container{
-    background-color: rgba(24, 23, 23, 0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
     padding: 15px;
 }

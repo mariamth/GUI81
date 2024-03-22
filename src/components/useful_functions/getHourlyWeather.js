@@ -36,6 +36,7 @@ export const getHourlyWeather = async (cityName) => {
         };
       });
       return hourlyData;
+    //Error handling
     } else {
       throw new Error(`Error: Unable to fetch hourly weather data. Status code: ${response.status}`);
     }
@@ -43,3 +44,4 @@ export const getHourlyWeather = async (cityName) => {
     throw new Error(`Error: ${error.message}`);
   }
 };
+export default getHourlyWeather;
