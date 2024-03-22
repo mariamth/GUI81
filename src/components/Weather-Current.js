@@ -33,7 +33,7 @@ const CurrentWeather = () => {
     fetchData(); // Call the fetchData function when the component mounts
   }, []);
 
-  // Render the component
+  // display the main page
   return (
     <div className="CurrentWcontainer"> 
       <div className="CWlarge-container">
@@ -61,10 +61,11 @@ const CurrentWeather = () => {
       {/* Display error message if needed */}
       {error && <p>{error}</p>}
       <div className="small-container-wrapper">
-        {/* Map the hour forcast and display the next 3 hour chunks of forecast */}
+        {/* Map the hour forecast and display the next 3-hour chunks of forecast */}
         {hourlyForecast.map((hour, index) => (
           <div key={index} className="small-container">
-            <h2>{hour.dt_txt}</h2>
+            {/* Format date to remove seconds */}
+            <h2>{new Date(hour.dt_txt).toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' })}</h2>
             <p>Temperature: {hour.main.temp}°C</p>
             <p>Weather: {hour.weather[0].description}</p>
             {/* Display weather icon for each hour */}
