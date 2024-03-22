@@ -1,24 +1,24 @@
 
+
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';
 import './Statistics.css';
 import SearchIcon from './assets/SearchIcon.png';
-import Thermometer from './assets/Thermometer.png';
-import Humid from './assets/Humid.png';
-import Wind_Speed from './assets/Wind_Speed.png';
 import { getWeather } from './useful_functions/getWeather';
 import get5DayData from './useful_functions/get5DayData';
 import Background from './Background';
 import Chart from 'chart.js/auto';
 
 function Statistics() {
+  // States for managing search input, weather data, error, selected parameter, and five-day weather forecast
   const [searchInput, setSearchInput] = useState('');
   const [weatherData, setWeatherData] = useState(null);
   const [error, setError] = useState('');
   const [selectedParameter, setSelectedParameter] = useState('temperature');
   const [fiveDayWeather, setFiveDayWeather] = useState(null);
+  // Reference for managing Chart instance
   const chartInstance = useRef(null);
 
+  // Function to fetch weather data for a given city
   const fetchWeatherData = async (city) => {
     try {
       const data = await getWeather(city);
@@ -34,32 +34,37 @@ function Statistics() {
     }
   };
 
+  // Fetch initial weather data for London on component mount
   useEffect(() => {
     fetchWeatherData('London');
   }, []);
 
+  // Function to handle search when search button is clicked
   const handleSearch = async () => {
     if (searchInput.trim() !== '') {
       fetchWeatherData(searchInput);
     }
   };
 
+  // Function to handle search when Enter key is pressed
   const handleKeyPress = (event) => {
     if (event.key === 'Enter') {
       handleSearch();
     }
   };
 
+  // Function to handle parameter change for the chart
   const handleParameterChange = (parameter) => {
     setSelectedParameter(parameter);
   };
 
+  // Effect to update chart when fiveDayWeather or selectedParameter changes
   useEffect(() => {
     if (fiveDayWeather) {
       const dates = fiveDayWeather.map((forecast) => forecast.date);
       const values = fiveDayWeather.map((forecast) => {
         if (selectedParameter === 'windSpeed') {
-          // Adjust to match the property name returned by get5DayData function
+          // Matches the property name returned by get5DayData function
           return forecast.wind_speed;
         } else {
           return forecast[selectedParameter];
@@ -104,6 +109,7 @@ function Statistics() {
     }
   }, [fiveDayWeather, selectedParameter]);
 
+  // Rendering UI
   return (
     <div className='Stats-Screen'>
       <div className='weather-details-container'>
