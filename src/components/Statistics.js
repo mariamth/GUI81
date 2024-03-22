@@ -81,13 +81,22 @@ function Statistics() {
             data: values,
             backgroundColor: 'rgba(54, 162, 235, 0.5)',
             borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
+            borderWidth: 1,
+            
           }]
         },
         options: {
           scales: {
             y: {
-              beginAtZero: true
+              beginAtZero: true,
+              ticks: {
+                color: 'white',
+              }
+            },
+            x: {
+              ticks: {
+                color: 'white',
+              }
             }
           }
         }
