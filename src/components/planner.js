@@ -35,9 +35,9 @@ const Planner = () => {
 
   return (
     <div className = "input-container">
-        <input type="text" placeholder="Enter item" value={newItem}onChange={(e) => setNewItem(e.target.value)} style={{ width: '10%', color: 'white', fontSize:'17px'}}/>
-        <input type="text" placeholder="Enter time" value={time}onChange={(e) => setTime(e.target.value)} style={{ width: '10%', color: 'white', fontSize:'17px'}}/>
-        <input type="text" placeholder="Enter description"value={description}onChange={(e) => setDescription(e.target.value)} style={{ width: '50%', color: 'white', fontSize:'17px'}}/>
+        <input className='planner-input' type="text" placeholder="Enter item" value={newItem}onChange={(e) => setNewItem(e.target.value)} style={{ width: '10%', color: 'white', fontSize:'17px'}}/>
+        <input className='planner-input' type="text" placeholder="Enter time" value={time}onChange={(e) => setTime(e.target.value)} style={{ width: '10%', color: 'white', fontSize:'17px'}}/>
+        <input className='planner-input' type="text" placeholder="Enter description"value={description}onChange={(e) => setDescription(e.target.value)} style={{ width: '50%', color: 'white', fontSize:'17px'}}/>
         <button className = "add-button" onClick={addItem} >Add</button>
         <div className = "list-container">
           <ul className = "item-list">
