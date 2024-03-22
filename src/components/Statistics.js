@@ -107,9 +107,7 @@ function Statistics() {
   return (
     <div className='Stats-Screen'>
       <div className='weather-details-container'>
-      <img src={Thermometer} className='thermometer'/>
-      <img src={Humid} className='Humid'/>
-      <img src={Wind_Speed} className='Wind_Speed'/>
+
         {weatherData && (
           <div className="weather-details-header">
             <h2>Weather Details</h2>
@@ -163,7 +161,6 @@ function Statistics() {
           </button>
         </div>
         <div className='Details-Rectangle'></div>
-        
         <div className='Chart-Rectangle'></div>
       </div>
     </div>

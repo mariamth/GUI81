@@ -35,11 +35,12 @@
     width: calc(100% - 30px); 
     height: 35px;
     background: rgba(0, 0, 0, 0.25);
+    color: white;
     border-radius: 40px;
     font-size: medium;
     padding-left: 50px; 
     border: none;
-    position: relative;
+    position:relative;
 }
 
 .Search-Input::placeholder{
@@ -52,8 +53,8 @@
     cursor: pointer;
     padding: 0;
     position: absolute;
-    left: 3.9%; 
-    top: 70%; 
+    left: 55%; 
+    top: 55%; 
     transform: translateY(-50%);
     height: 100%;
 }
@@ -117,16 +118,15 @@
     top: 80%;
     left: 10%;
     font-size: 18px;
-    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: 'Times New Roman', Times, serif;
     font-weight: 500;
     color: white;
 }
 
-
 .Weather-Map {
     z-index: 4;
     position: absolute;
-    top: 10%;
+    top: 13%;
     left: 4%;
     width: 64%;
     height: 66%; 
@@ -188,7 +188,7 @@
     z-index: 10;
     position: absolute;
     top: 5%;
-    left: 35%;
+    left: 42%;
     width: 80px;
     height: 8%;
     border-radius: 40px;
@@ -206,29 +206,4 @@
     border-radius: 40px;
     background: rgba(0, 0, 0, 0.25);
     color: white;
-}
-
-
-.thermometer{
-    z-index: 9;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 45%;
-}
-
-.Humid{
-    z-index: 9;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 59%;
-}
-
-.Wind_Speed{
-    z-index: 9;
-    position: absolute;
-    width: 30px;
-    height: 35px;
-    top: 69%;
 }
