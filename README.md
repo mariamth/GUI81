@@ -1,10 +1,9 @@
 # notices
 ## Install these  Dependencies
 
-npm install axios@1.6.8
+npm install axios
 npm install chart.js@^3.0.0
-npm install leaflet
-npm install web-vitals@2.1.4
+npm install web-vitals
 
 
 
