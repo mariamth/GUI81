@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './suggestion.css';
+import './planner.css';
 
 const Planner = () => {
   // State to manage list of items
@@ -34,39 +34,25 @@ const Planner = () => {
   };
 
   return (
-    <div>
-      <h1>Planner</h1>
-      <div>
-        <input
-          type="text"
-          placeholder="Enter item"
-          value={newItem}
-          onChange={(e) => setNewItem(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Enter time"
-          value={time}
-          onChange={(e) => setTime(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Enter description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <button onClick={addItem}>Add Item</button>
-      </div>
-      <ul>
-        {items.map(item => (
-          <li key={item.id}>
-            <div>{item.name}</div>
-            <div>{item.time}</div>
-            <div>{item.description}</div>
-            <button onClick={() => removeItem(item.id)}>Remove</button>
-          </li>
-        ))}
-      </ul>
+    <div className = "input-container">
+        <input type="text" placeholder="Enter item" value={newItem}onChange={(e) => setNewItem(e.target.value)} style={{ width: '10%', color: 'white', fontSize:'17px'}}/>
+        <input type="text" placeholder="Enter time" value={time}onChange={(e) => setTime(e.target.value)} style={{ width: '10%', color: 'white', fontSize:'17px'}}/>
+        <input type="text" placeholder="Enter description"value={description}onChange={(e) => setDescription(e.target.value)} style={{ width: '50%', color: 'white', fontSize:'17px'}}/>
+        <button className = "add-button" onClick={addItem} >Add</button>
+        <div className = "list-container">
+          <ul className = "item-list">
+            {items.map(item => (
+              <li key={item.id}>
+                <div className='list-box-container'>
+                <div className = "list-of-item"> TO-DO: {item.name}</div>
+                <div className='list-of-time'>Time: {item.time}</div>
+                <div className='list-of-description'>Description: {item.description}</div>
+                </div>
+                <button className = "remove-button" onClick={() => removeItem(item.id)}>Remove</button>
+              </li>
+            ))}
+          </ul>
+        </div>
     </div>
   );
 };

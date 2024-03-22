@@ -1,152 +1,82 @@
-.container1{
-    width: 100%; 
-    height: 100%; 
-    mix-blend-mode: color-burn; 
-    border-radius: 40px
-}
 
-.container2{
-    display:flex;
-}
-
-.container3{ 
-    background: #D9D9D9; 
-    border-radius: 19px;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    width: 100%;
-    height: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    margin: 50 px;
-    margin-left: 5%;
-    margin-right: 5%
-}
-
-.PLANNER{ 
-    color: #69C859; 
-    font-size: 24px; 
-    font-family: Arial, Helvetica, sans-serif; 
-    font-weight: 400; 
-    word-wrap: break-word;
-    align-items: center;
-    text-align:center;
-}
-
-a{
-    text-decoration:none;
-}
-
-.container4{
-    margin-top: 1000 px;
-    width: 100%; 
-    height: 70vh; 
-    background: #D9D9D9; 
-    border-radius: 20px;
-    box-sizing: border-box;
-    margin-top: 5%;
-    position: relative; 
-}
-
-
-.Textforplanner{
-    text-align: left;
-    align-items: center;
-    margin-left: 21%;
-    margin-bottom:1%;
-    font-size: 40px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.container6{
-    box-sizing: border-box;
-    text-align: center;
-    align-items: center;
-    border-radius: 20px;
-    background-color: darkgray;
-    padding:2%;
-    width: 50%;
-    margin: auto;
-    position:relative;
-    padding-top: 2%;
-    margin-top: 5%;
-}
-
-#input-box {
-    width: 300px; /* Adjust the width as needed */
-    height: 40px; /* Adjust the height as needed */
-    font-size: 16px; /* Adjust the font size as needed */
-    border-radius: 10px;
-}
-
-#button1 {
-    width: 100px; /* Adjust the width as needed */
-    height: 45px; /* Adjust the height as needed */
-    font-size: 16px; /* Adjust the font size as needed */
-    border-radius:10px;
-    background-color:red;
-    color: white;
-    right:20px;
-}
-
-a{
-    text-decoration:none;
-}
-
-#list-of-notes{
-    text-align: center;
-    align-items: center;
-    margin-right:50%;
-}
-
-ul li{
-    list-style: none;
-    font-size: 20px; 
-    user-select: none;
-    cursor: pointer;
-    padding: 12px 8px 12px 40px; 
-    position:relative;
-}
-
-ul li::before{
-    content:'';
+.input-container{
+    /* margin-top: 5%; */
     position: absolute;
-    height: 28px;
-    width: 28px;
-    border-radius: 50%;
-    background-size:cover;
-    background-position: center;
-    left: 100px; /* Adjust the left position to position the image */
-    top: 50%; /* Position the image vertically */
-    transform: translateY(-50%); /* Center the image vertically */
-    display: inline-block;
-}
-
-ul li.checked{
-    color:#555;
-    text-decoration: line-through;
-}
-
-ul li.checked::before{
-    background-image: url('./assets/checked.jpg');
-
-}
-
-ul li span{
-    position:absolute;
-    right: 1px;
-    bottom: 2px;
-    font-size: 22px;
-    color: #555;
+    top: 15%;
+    width: 100%;
     text-align: center;
-    align-items: right;
-    line-height: 40px;
-    border-radius: 50%; /* Makes the square appear as a circle */
-    width: 40px; /* Adjust size to make it a perfect circle */
-    height: 40px; 
+    justify-content: center;
+    align-items: center;
+    height: 40%;
 }
 
-ul li span:hover{
-    background: #edeef0
+input[type="text"] {
+    display: flex;
+    width: 200px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    padding: 5px; /* Add padding for better visual appearance */
+    margin-bottom: 10px; /* Add margin for spacing between textboxes */
+    border-radius: 10px;
+    margin-right: 3%;
+    display: inline-block; /* Display inputs horizontally */
+    opacity: 50%;
+    background-color: rgb(31, 29, 29);
+    font-family: "Gill Sans", serif;
 }
 
+.list-container{
+    position: absolute;
+    display: flex;
+    left: 4%;
+    width: 96%;
+    height: 100%;
+    text-align: left;
+}
+
+.itemlist{
+    position: absolute;
+    padding-left: 0%;
+    left: 0%;
+    display: flex;
+    list-style-type: none;
+}
+
+.li{
+    text-align: left;
+}
+
+.ul li{
+    list-style-type:none;
+    display: inline-block; /* Display inputs horizontally */
+}
+
+.remove-button{
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 5%;
+    border-radius: 20px;
+}
+
+.list-of-item{
+    font-size: 28px;
+    font-weight: 1000;
+    text-decoration: underline;
+}
+
+.list-of-time{
+    font-size: 18px;
+    font-weight: 500;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.list-of-description{
+    font-size: 18px;
+    font-weight: 500;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.list-box-container{
+    background-color: rgba(24, 23, 23, 0.4);
+    border-radius: 20px;
+    padding: 15px;
+}
