@@ -6,7 +6,8 @@ export const getMonthlyWeather = async (cityName) => { // Change to named export
     const params = {
         q: cityName,
         appid: apiKey,
-        unit: 'metric'};
+        units: 'metric'
+    };
 
    try {
         const response = await axios.get(baseUrl, { params });
