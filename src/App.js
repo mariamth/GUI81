@@ -15,8 +15,6 @@ import Suggestions from './components/Suggestions.js';
 import DailyWeather from './components/Weather-Daily.js';
 import MonthlyWeather from './components/Weather-Monthly.js';
 
-import Notes  from './components/Notes.js';
-
 import { getWeather } from './components/useful_functions/getWeather.js'; 
 
 function App(){
@@ -50,8 +48,6 @@ function App(){
 
         <Route path="/home/daily" element={<DailyWeather />} />
         <Route path="/home/monthly" element={<MonthlyWeather />} />
-
-        <Route path="/suggestions/planner" element={<Notes />} />
       </Routes>
     </Router>
   )

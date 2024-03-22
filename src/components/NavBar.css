@@ -25,10 +25,8 @@
     transform: scale(0.8);
   }
  .nav-selected{
-    /*
-    id changes dynamically based on URL pathname
-    Selected items become bigger and change colour to white
-    */
+    /* id changes dynamically based on URL pathname
+    Selected items become bigger and change colour to white */
     list-style-type: none;
     margin: 5px 0 0 0;
     padding: 10px;
